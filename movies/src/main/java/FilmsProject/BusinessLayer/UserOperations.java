@@ -8,16 +8,21 @@ import FilmsProject.Interfaces.UserAccessService;
 import FilmsProject.Interfaces.UserService;
 import FilmsProject.Model.Review;
 import FilmsProject.Model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
+@Component
 public class UserOperations implements UserService {
-    private UserAccessService userAccessService = new UserAccessDB();
-    private FilmAccessService filmAccessService = new FilmAccessDB();
-    private MoviesDB DBconnection = MoviesDB.getInstance();
+
+    @Autowired
+    private UserAccessService userAccessService;
+    @Autowired
+    private FilmAccessService filmAccessService;
 
     @Override
     public User signIn(String login, String password) {

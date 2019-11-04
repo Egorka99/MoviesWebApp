@@ -1,5 +1,7 @@
 package FilmsProject.Model;
 
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDate;
 
 public class Review {
@@ -18,6 +20,9 @@ public class Review {
         Rating = rating;
         ReviewId = maxId+1;
         maxId++;
+    }
+
+    public Review() {
     }
 
     public LocalDate getCreateDate() {
@@ -40,5 +45,8 @@ public class Review {
         return ReviewId;
     }
 
-
+    @Override
+    public String toString() {
+        return "Отзыв № "+getReviewId()+". Автор: "+getAuthor().getName()+". Дата создания: "+getCreateDate()+". Оценка: "+getRating()+"";
+    }
 }

@@ -1,9 +1,10 @@
 package FilmsProject.Model;
 
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class Film {
     private String title;
@@ -13,7 +14,6 @@ public class Film {
     private LocalDate releaseDate;
     private double rating;
     private String description;
-    private List<Review> reviewList;
 
     public Film(String title, String imdbIdentifier, FilmType filmType, String genre, LocalDate releaseDate, double rating,
                 String description) {
@@ -24,8 +24,9 @@ public class Film {
         this.releaseDate = releaseDate;
         this.rating = rating;
         this.description = description;
+    }
 
-        reviewList = new ArrayList<>();
+    public Film() {
     }
 
     public String getTitle() {
@@ -55,25 +56,5 @@ public class Film {
     public String getDescription() {
         return description;
     }
-
-    public List<Review> getReviewList() {
-        return reviewList;
-    }
-    public Review getReviewFromListByIndex(int index) {
-        return reviewList.get(index);
-    }
-
-    public void addReviewInList(Review review) {
-       reviewList.add(review);
-    }
-
-    public void replaceReview(int index,Review review) {
-       reviewList.set(index,review);
-    }
-
-    public void removeReviewFromList(int index) {
-        reviewList.remove(index);
-    }
-
 
 }

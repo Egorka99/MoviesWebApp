@@ -2,15 +2,20 @@ package FilmsProject.DataLayer;
 
 import FilmsProject.Interfaces.UserAccessService;
 import FilmsProject.Model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
+@Component
 public class UserAccessDB implements UserAccessService {
 
-    private MoviesDB DBconnection = MoviesDB.getInstance();
+    @Autowired
+    private MoviesDB DBconnection;
 
     public boolean createTable() throws SQLException {
         return DBconnection.getPreparedStatement("CREATE TABLE IF NOT EXISTS User(\n" +
