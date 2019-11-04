@@ -1,4 +1,4 @@
-package FilmsProject.Database;
+package FilmsProject.DataLayer;
 
 import java.sql.*;
 

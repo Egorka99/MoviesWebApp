@@ -1,6 +1,6 @@
 package FilmsProject.View;
 
-import FilmsProject.Database.FilmTable;
+import FilmsProject.DataLayer.FilmAccessDB;
 import FilmsProject.Model.Film;
 import FilmsProject.Model.Review;
 
@@ -33,17 +33,11 @@ public class ConsoleInfo {
     }
 
     public static void getReviewsFromDBInfo(Film film){
-        try {
-            for (Review currentReview : new FilmTable().getReviews(film.getImdbIdentifier())) {
-                System.out.printf("Отзыв № %s. Автор: %s. Дата создания: %s. Оценка: %s \n",currentReview.getReviewId(),
-                        currentReview.getAuthor().getName(),currentReview.getCreateDate(),currentReview.getRating());
-                System.out.println(currentReview.getReviewText());
-            }
+        for (Review currentReview : new FilmAccessDB().getFilmReviews(film.getImdbIdentifier())) {
+            System.out.printf("Отзыв № %s. Автор: %s. Дата создания: %s. Оценка: %s \n",currentReview.getReviewId(),
+                    currentReview.getAuthor().getName(),currentReview.getCreateDate(),currentReview.getRating());
+            System.out.println(currentReview.getReviewText());
         }
-        catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-
     }
 
     public static void getInfoln(Film film){
@@ -54,12 +48,6 @@ public class ConsoleInfo {
     }
 
     public static void getSearchResult(List<Film> foundFilms)  {
-        try {
-            Thread.sleep(5000);
-        }
-        catch (InterruptedException ex) {
-            ex.printStackTrace();
-        }
         System.out.println();
         System.out.println("Найденные фильмы: ");
             for (Film foundFilm: foundFilms) {

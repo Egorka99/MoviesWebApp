@@ -9,6 +9,10 @@ public class User extends Person {
         this.password = userPassword;
     }
 
+    public User(String userLogin) {
+        this.login = login;
+    }
+
     public User() {}
 
 }

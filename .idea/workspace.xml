@@ -11,6 +11,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -24,21 +25,23 @@
   </component>
   <component name="ProjectId" id="1Sy70PUFSa1ScuFMopkJdBzznk2" />
   <component name="PropertiesComponent">
+    <property name="ToolWindowDebug.ShowToolbar" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/movies" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AccentureJava" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\java\MoviesWebApp\movies\src\main\java" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\java\MoviesWebApp\movies" />
       <recent name="D:\java\MoviesWebApp\movies\src\main\java" />
       <recent name="D:\java\MoviesWebApp\movies\src\main\Java" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\java\MoviesWebApp\movies\src\main\java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -53,7 +56,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="DatabaseApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FilmsProject.View.DatabaseApplication" />
       <module name="movies" />
@@ -67,10 +70,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FilmsProject.View.Test" />
+      <module name="movies" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FilmsProject.View.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.DatabaseApplication" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.jsp" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="userAccessService.addNewUser(new User(userName,userLogin,userPassword))" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
