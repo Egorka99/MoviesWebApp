@@ -46,5 +46,8 @@ public class Review {
         return ReviewId;
     }
 
-
+    @Override
+    public String toString() {
+        return "Отзыв № "+getReviewId()+". Автор: "+getAuthor().getName()+". Дата создания: "+getCreateDate()+". Оценка: "+getRating()+"";
+    }
 }

@@ -2,8 +2,12 @@ package FilmsProject.Test;
 
 import FilmsProject.BusinessLayer.AdminOperations;
 import FilmsProject.BusinessLayer.FilmOperations;
+import FilmsProject.BusinessLayer.UserOperations;
+import FilmsProject.Interfaces.UserService;
 import FilmsProject.Model.Admin;
 import FilmsProject.Model.Film;
+import FilmsProject.Model.Review;
+import FilmsProject.Model.User;
 import FilmsProject.View.ConsoleInfo;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -17,13 +21,25 @@ public class TestSpring {
         TestBean testBean = context.getBean("someBean",TestBean.class);
         testBean.info();
 
-       FilmOperations adminOperations = context.getBean("filmOperations",FilmOperations.class);
+       FilmOperations filmOperations = context.getBean("filmOperations",FilmOperations.class);
 
-        List<Film> filmsList = adminOperations.searchFilmByField("IMDBIdentifier","326");
+        List<Film> filmsList = filmOperations.searchFilmByField("IMDBIdentifier","326");
 
         for (Film film: filmsList) {
-            ConsoleInfo.getFullInfo(film);
+            new ConsoleInfo().getInfoln(film);
         }
+        List<Review> reviewList = filmOperations.getReviews("326");
+
+        for (Review review : reviewList) {
+            System.out.println(review);
+        }
+
+        UserService userService = context.getBean("userOperations", UserOperations.class);
+
+        User user = userService.signIn("egorka99","qwerty123");
+
+        System.out.println(user.getName());
+
 
 
     }

@@ -35,13 +35,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\java\MoviesWebApp\movies\src\main\java" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\java\MoviesWebApp\movies" />
       <recent name="D:\java\MoviesWebApp\movies\src\main\java" />
       <recent name="D:\java\MoviesWebApp\movies\src\main\Java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\java\MoviesWebApp\movies\db" />
+      <recent name="D:\java\MoviesWebApp\movies\src\main\java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -56,7 +57,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.TestSpring">
     <configuration name="DatabaseApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FilmsProject.View.DatabaseApplication" />
       <module name="movies" />
@@ -98,8 +99,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test" />
         <item itemvalue="Application.TestSpring" />
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.DatabaseApplication" />
       </list>
     </recent_temporary>
@@ -111,16 +112,11 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/movies/src/main/java/FilmsProject/View/ConsoleInfo.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/movies/src/main/java/FilmsProject/DataLayer/FilmAccessDB.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="userAccessService.addNewUser(new User(userName,userLogin,userPassword))" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>
