@@ -1,6 +1,4 @@
 package FilmsProject.Model;
-
-
 import org.springframework.stereotype.Component;
 
 @Component
@@ -10,10 +8,6 @@ public class User extends Person {
         this.name = userName;
         this.login = userLogin;
         this.password = userPassword;
-    }
-
-    public User(String userLogin) {
-        this.login = login;
     }
 
     public User() {}

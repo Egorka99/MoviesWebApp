@@ -5,6 +5,7 @@ import FilmsProject.Model.Film;
 import FilmsProject.Model.FilmType;
 import FilmsProject.Model.Review;
 import FilmsProject.Model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.sql.PreparedStatement;
@@ -17,7 +18,8 @@ import java.util.List;
 @Component
 public class FilmAccessDB implements FilmAccessService {
 
-    private MoviesDB DBconnection = MoviesDB.getInstance();
+    @Autowired
+    private MoviesDB DBconnection;
 
     public boolean createFilmTable() throws SQLException {
         return DBconnection.getPreparedStatement("CREATE TABLE IF NOT EXISTS Film(\n" +

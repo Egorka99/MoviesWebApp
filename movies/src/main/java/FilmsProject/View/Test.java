@@ -62,6 +62,6 @@ public class Test {
         addTestData();
         //filmSearch();
        // userRegistration();
-        userWriteUpdateReview();
+       // userWriteUpdateReview();
     }
 }

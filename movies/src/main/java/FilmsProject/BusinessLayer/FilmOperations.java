@@ -5,6 +5,7 @@ import FilmsProject.Interfaces.FilmAccessService;
 import FilmsProject.Interfaces.FilmService;
 import FilmsProject.Model.Film;
 import FilmsProject.Model.Review;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -12,7 +13,8 @@ import java.util.List;
 @Component
 public class FilmOperations implements FilmService {
 
-    private FilmAccessService filmAccessService = new FilmAccessDB();
+    @Autowired
+    private FilmAccessService filmAccessService;
 
     @Override
     public List<Film> searchFilmByField(String field, String value) {
