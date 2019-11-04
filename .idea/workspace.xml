@@ -84,11 +84,11 @@
       </method>
     </configuration>
     <configuration name="TestSpring" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FilmsProject.TestSpring" />
+      <option name="MAIN_CLASS_NAME" value="FilmsProject.Test.TestSpring" />
       <module name="movies" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="FilmsProject.*" />
+          <option name="PATTERN" value="FilmsProject.Test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

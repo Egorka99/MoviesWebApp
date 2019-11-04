@@ -46,6 +46,8 @@
       <version>5.2.0.RELEASE</version>
     </dependency>
   </dependencies>
+
+
   <build>
     <finalName>movies</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
