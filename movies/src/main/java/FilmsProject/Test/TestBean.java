@@ -8,7 +8,7 @@ public class TestBean {
 
     public TestBean(String name) {
         this.name = name;
-    } 
+    }
 
     public TestBean() {}
 

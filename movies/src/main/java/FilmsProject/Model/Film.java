@@ -1,10 +1,12 @@
 package FilmsProject.Model;
 
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Component
 public class Film {
     private String title;
     private String imdbIdentifier;
@@ -26,6 +28,9 @@ public class Film {
         this.description = description;
 
         reviewList = new ArrayList<>();
+    }
+
+    public Film() {
     }
 
     public String getTitle() {

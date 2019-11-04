@@ -8,12 +8,14 @@ import FilmsProject.Interfaces.UserAccessService;
 import FilmsProject.Interfaces.UserService;
 import FilmsProject.Model.Review;
 import FilmsProject.Model.User;
+import org.springframework.stereotype.Component;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
+@Component
 public class UserOperations implements UserService {
     private UserAccessService userAccessService = new UserAccessDB();
     private FilmAccessService filmAccessService = new FilmAccessDB();

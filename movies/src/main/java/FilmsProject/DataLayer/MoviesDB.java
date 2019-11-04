@@ -1,7 +1,10 @@
 package FilmsProject.DataLayer;
 
+import org.springframework.stereotype.Component;
+
 import java.sql.*;
 
+@Component
 public class MoviesDB {
 
     private static MoviesDB instance = null;

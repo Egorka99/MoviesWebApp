@@ -2,12 +2,15 @@ package FilmsProject.DataLayer;
 
 import FilmsProject.Interfaces.UserAccessService;
 import FilmsProject.Model.User;
+import org.springframework.stereotype.Component;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
+@Component
 public class UserAccessDB implements UserAccessService {
 
     private MoviesDB DBconnection = MoviesDB.getInstance();

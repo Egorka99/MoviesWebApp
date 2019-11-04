@@ -4,9 +4,11 @@ import FilmsProject.DataLayer.FilmAccessDB;
 import FilmsProject.Interfaces.AdminService;
 import FilmsProject.Interfaces.FilmAccessService;
 import FilmsProject.Model.Admin;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
+@Component
 public class AdminOperations implements AdminService {
 
     private FilmAccessService filmAccessService = new FilmAccessDB();

@@ -1,7 +1,10 @@
 package FilmsProject.Model;
 
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDate;
 
+@Component
 public class Review {
     private static int maxId;
 
@@ -18,6 +21,9 @@ public class Review {
         Rating = rating;
         ReviewId = maxId+1;
         maxId++;
+    }
+
+    public Review() {
     }
 
     public LocalDate getCreateDate() {
