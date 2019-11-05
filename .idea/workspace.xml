@@ -41,6 +41,7 @@
       <recent name="D:\java\MoviesWebApp\movies\src\main\Java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\java\MoviesWebApp\movies\src\main\resources" />
       <recent name="D:\java\MoviesWebApp\movies\db" />
       <recent name="D:\java\MoviesWebApp\movies\src\main\java" />
     </key>
@@ -57,7 +58,33 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestSpring">
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Appliation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FilmsProject.RESTservice.Appliation" />
+      <module name="movies" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FilmsProject.RESTservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FilmsProject.RESTservice.Application" />
+      <module name="movies" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FilmsProject.RESTservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DatabaseApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FilmsProject.View.DatabaseApplication" />
       <module name="movies" />
@@ -99,6 +126,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Application" />
+        <item itemvalue="Application.Appliation" />
         <item itemvalue="Application.TestSpring" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.DatabaseApplication" />

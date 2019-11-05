@@ -1,6 +1,5 @@
 package FilmsProject.View;
 
-
 import FilmsProject.Model.Film;
 import org.springframework.stereotype.Component;
 
