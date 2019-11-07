@@ -1,8 +1,12 @@
 package FilmsProject.RESTservice;
 
 import FilmsProject.Interfaces.FilmService;
+import FilmsProject.Interfaces.UserService;
 import FilmsProject.Model.Film;
+import FilmsProject.Model.Review;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.ws.rs.*;
 import java.util.List;
@@ -10,19 +14,26 @@ import java.util.List;
 @Path("/movie")
 @Consumes("application/json")
 @Produces("application/json")
+@Component
 public class MovieController {
 
-    @Autowired
-    private FilmService filmService;
+     @Autowired
+     private FilmService filmService;
 
-    @GET 
-    @Path("/{id}")
-    public Film getById(@PathParam("id") String id) {
-        List<Film> listWithCurrentIdFilm = filmService.searchFilmByField("IMDBIdentifier","id");
+     @Autowired
+     private UserService userService;
 
-        for (Film film : listWithCurrentIdFilm) {
-            return film;
-        }
-        return null;
-    }
+     @GET
+     @Path("/{id}")
+     public Object[] getById(@PathParam("id") String id) {
+        return filmService.getFilmDetails(id);
+     }
+
+     @POST
+     @Path("/{id}/addReview")
+     public boolean addReview(@String filmIdentifier,String reviewText,double rating) {
+          return userService.writeReview(null,filmIdentifier,reviewText,rating);
+     }
+
+
 }
