@@ -71,3 +71,15 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 	at FilmsProject.DataLayer.FilmAccessDB.getFilmsByProperty(FilmAccessDB.java:76)
 	at FilmsProject.BusinessLayer.FilmOperations.searchFilmByField(FilmOperations.java:21)
 	at FilmsProject.Test.TestSpring.main(TestSpring.java:22)
+2019-11-05 20:53:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-07 08:42:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-07 08:43:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-07 08:43:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
