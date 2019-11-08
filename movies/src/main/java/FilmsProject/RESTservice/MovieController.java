@@ -40,7 +40,7 @@ public class MovieController {
                        .status(Response.Status.OK)
                        .entity("Отзыв успешно добавлен!")
                        .build();
-          }
+          } 
 
           return Response
                   .status(Response.Status.INTERNAL_SERVER_ERROR)

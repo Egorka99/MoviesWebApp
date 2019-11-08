@@ -1,10 +1,8 @@
-package FilmsProject.Test;
+package FilmsProject.SpringTest;
 
-import FilmsProject.BusinessLayer.AdminOperations;
 import FilmsProject.BusinessLayer.FilmOperations;
 import FilmsProject.BusinessLayer.UserOperations;
 import FilmsProject.Interfaces.UserService;
-import FilmsProject.Model.Admin;
 import FilmsProject.Model.Film;
 import FilmsProject.Model.Review;
 import FilmsProject.Model.User;

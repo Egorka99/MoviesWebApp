@@ -26,9 +26,10 @@ public class UserAccessDB implements UserAccessService {
 
     @Override
     public User getUserByLogin(String login) {
-        Statement preparedStatement = DBconnection.getStatement();
+        PreparedStatement preparedStatement = DBconnection.getPreparedStatement("SELECT * FROM User WHERE login = ?;");
         try {
-            ResultSet queryResult = preparedStatement.executeQuery("SELECT * FROM User WHERE login = '"+login+"';");
+            preparedStatement.setString(1,login);
+            ResultSet queryResult = preparedStatement.executeQuery();
             return queryResult.next() ? new User(queryResult.getString("name"),login,queryResult.getString("password")) : null;
         }
         catch (SQLException ex) {
@@ -39,10 +40,13 @@ public class UserAccessDB implements UserAccessService {
 
     @Override
     public boolean addNewUser(User user) {
-        Statement preparedStatement = DBconnection.getStatement();
+        PreparedStatement preparedStatement = DBconnection.getPreparedStatement("INSERT INTO User VALUES (?,?,?);");
         try {
+            preparedStatement.setString(1,user.getLogin());
+            preparedStatement.setString(2,user.getName());
+            preparedStatement.setString(3,user.getPassword());
             if (!isUserExist(user)) {
-                preparedStatement.execute("INSERT INTO User VALUES ('"+user.getLogin()+"','"+user.getName()+"','"+user.getPassword()+"');");
+                preparedStatement.execute();
                 return true;
             }
             else return false;
@@ -54,9 +58,10 @@ public class UserAccessDB implements UserAccessService {
         }
     }
     private boolean isUserExist(User user) {
-        Statement preparedStatement = DBconnection.getStatement();
+        PreparedStatement preparedStatement = DBconnection.getPreparedStatement("SELECT * FROM User WHERE login = ?;");
         try {
-            return preparedStatement.executeQuery("SELECT * FROM User WHERE login = '"+user.getLogin()+"';").next();
+            preparedStatement.setString(1,user.getLogin());
+            return preparedStatement.executeQuery().next();
         }
         catch (SQLException ex) {
             System.err.println("Не удалось найти пользователя");

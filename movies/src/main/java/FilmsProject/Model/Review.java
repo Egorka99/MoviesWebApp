@@ -4,7 +4,7 @@ package FilmsProject.Model;
 import java.time.LocalDate;
 
 public class Review {
-    private static Long maxId;
+    private static Long maxId = 0L;
 
     private Long reviewId;
     private LocalDate createDate;
