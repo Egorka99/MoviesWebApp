@@ -281,3 +281,103 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:D:/java/Movi
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
 	... 65 more
+2019-11-08 19:45:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Невозможно преобразование строки "2000" в тип "DATE"
+Cannot parse "DATE" constant "2000"; SQL statement:
+UPDATE Review SET createDate = 2019-11-08, reviewText = ?, rating = ? WHERE reviewId = ? [22007-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:457)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.ValueDate.parse(ValueDate.java:74)
+	at org.h2.value.Value.convertToDate(Value.java:1093)
+	at org.h2.value.Value.convertTo(Value.java:816)
+	at org.h2.value.Value.convertTo(Value.java:772)
+	at org.h2.value.TypeInfo.cast(TypeInfo.java:515)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:378)
+	at org.h2.table.Table.validateConvertUpdateSequence(Table.java:845)
+	at org.h2.command.dml.Update.update(Update.java:176)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:240)
+	at FilmsProject.DataLayer.FilmAccessDB.updateReview(FilmAccessDB.java:152)
+	at FilmsProject.BusinessLayer.AdminOperations.updateReview(AdminOperations.java:22)
+	at FilmsProject.SpringTest.TestSpring.main(TestSpring.java:46)
+Caused by: java.lang.IllegalArgumentException: 2000
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:166)
+	at org.h2.value.ValueDate.parse(ValueDate.java:72)
+	... 13 more
+2019-11-08 19:46:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Невозможно преобразование строки "2000" в тип "DATE"
+Cannot parse "DATE" constant "2000"; SQL statement:
+UPDATE Review SET createDate = 2019-11-08, reviewText = ?, rating = ? WHERE reviewId = ? [22007-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:457)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.ValueDate.parse(ValueDate.java:74)
+	at org.h2.value.Value.convertToDate(Value.java:1093)
+	at org.h2.value.Value.convertTo(Value.java:816)
+	at org.h2.value.Value.convertTo(Value.java:772)
+	at org.h2.value.TypeInfo.cast(TypeInfo.java:515)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:378)
+	at org.h2.table.Table.validateConvertUpdateSequence(Table.java:845)
+	at org.h2.command.dml.Update.update(Update.java:176)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:240)
+	at FilmsProject.DataLayer.FilmAccessDB.updateReview(FilmAccessDB.java:152)
+	at FilmsProject.BusinessLayer.AdminOperations.updateReview(AdminOperations.java:22)
+	at FilmsProject.SpringTest.TestSpring.main(TestSpring.java:46)
+Caused by: java.lang.IllegalArgumentException: 2000
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:166)
+	at org.h2.value.ValueDate.parse(ValueDate.java:72)
+	... 13 more
+2019-11-08 19:51:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Невозможно преобразование строки "2000" в тип "DATE"
+Cannot parse "DATE" constant "2000"; SQL statement:
+UPDATE Review SET createDate = 2019-11-08, reviewText = ?, rating = ? WHERE reviewId = ? [22007-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:457)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.ValueDate.parse(ValueDate.java:74)
+	at org.h2.value.Value.convertToDate(Value.java:1093)
+	at org.h2.value.Value.convertTo(Value.java:816)
+	at org.h2.value.Value.convertTo(Value.java:772)
+	at org.h2.value.TypeInfo.cast(TypeInfo.java:515)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:378)
+	at org.h2.table.Table.validateConvertUpdateSequence(Table.java:845)
+	at org.h2.command.dml.Update.update(Update.java:176)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:240)
+	at FilmsProject.DataLayer.FilmAccessDB.updateReview(FilmAccessDB.java:152)
+	at FilmsProject.BusinessLayer.AdminOperations.updateReview(AdminOperations.java:22)
+	at FilmsProject.SpringTest.TestSpring.main(TestSpring.java:46)
+Caused by: java.lang.IllegalArgumentException: 2000
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:166)
+	at org.h2.value.ValueDate.parse(ValueDate.java:72)
+	... 13 more
+2019-11-08 19:55:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Невозможно преобразование строки "2000" в тип "DATE"
+Cannot parse "DATE" constant "2000"; SQL statement:
+UPDATE Review SET createDate = 2019-11-08, reviewText = ?, rating = ? WHERE reviewId = ? [22007-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:457)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.ValueDate.parse(ValueDate.java:74)
+	at org.h2.value.Value.convertToDate(Value.java:1093)
+	at org.h2.value.Value.convertTo(Value.java:816)
+	at org.h2.value.Value.convertTo(Value.java:772)
+	at org.h2.value.TypeInfo.cast(TypeInfo.java:515)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:378)
+	at org.h2.table.Table.validateConvertUpdateSequence(Table.java:845)
+	at org.h2.command.dml.Update.update(Update.java:176)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:240)
+	at FilmsProject.DataLayer.FilmAccessDB.updateReview(FilmAccessDB.java:152)
+	at FilmsProject.BusinessLayer.AdminOperations.updateReview(AdminOperations.java:22)
+	at FilmsProject.SpringTest.TestSpring.main(TestSpring.java:46)
+Caused by: java.lang.IllegalArgumentException: 2000
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:166)
+	at org.h2.value.ValueDate.parse(ValueDate.java:72)
+	... 13 more

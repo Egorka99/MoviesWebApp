@@ -18,7 +18,7 @@ import java.util.List;
 @Component
 public class FilmAccessDB implements FilmAccessService {
 
-    @Autowired 
+    @Autowired
     private MoviesDB DBconnection;
 
     public boolean createFilmTable() throws SQLException {
@@ -130,7 +130,8 @@ public class FilmAccessDB implements FilmAccessService {
         PreparedStatement preparedStatement = DBconnection.getPreparedStatement("DELETE FROM Review WHERE reviewId = ?");
         try {
             preparedStatement.setLong(1, reviewId);
-            return preparedStatement.execute();
+            preparedStatement.execute();
+            return true;
         } catch (SQLException ex) {
             System.err.println("Не удалось удалить отзыв");
             return false;
@@ -140,15 +141,16 @@ public class FilmAccessDB implements FilmAccessService {
     @Override
     public boolean updateReview(Long reviewId, LocalDate date, String reviewText, double rating) {
         PreparedStatement preparedStatement = DBconnection.getPreparedStatement("UPDATE Review SET " +
-                "createDate = " + date + ", " +
+                "createDate = '" + date + "', " +
                 "reviewText = ?, " +
                 "rating = ? " +
                 "WHERE reviewId = ?");
         try {
-            preparedStatement.setString(1, reviewText);
-            preparedStatement.setDouble(2, rating);
-            preparedStatement.setLong(3, reviewId);
+            preparedStatement.setString(1,reviewText);
+            preparedStatement.setDouble(2,rating);
+            preparedStatement.setLong(3,reviewId);
             return preparedStatement.execute();
+
         } catch (SQLException ex) {
             System.err.println("Не удалось изменить отзыв");
             return false;
