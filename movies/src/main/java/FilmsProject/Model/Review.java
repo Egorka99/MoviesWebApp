@@ -4,7 +4,6 @@ package FilmsProject.Model;
 import java.time.LocalDate;
 
 public class Review {
-    private static Long maxId = 0L;
 
     private Long reviewId;
     private LocalDate createDate;
@@ -12,17 +11,14 @@ public class Review {
     private String reviewText;
     private double Rating;
 
-    public Review(LocalDate createDate, Person author, String reviewText, double rating) {
+    public Review(Long reviewId, LocalDate createDate, Person author, String reviewText, double rating) {
+        this.reviewId = reviewId;
         this.createDate = createDate;
         this.author = author;
         this.reviewText = reviewText;
         Rating = rating;
-        reviewId = maxId+1;
-        maxId++;
     }
 
-    public Review() {
-    }
 
     public LocalDate getCreateDate() {
         return createDate;

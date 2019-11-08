@@ -41,7 +41,7 @@ public class UserOperations implements UserService {
     @Override
     public boolean writeReview(User author, String filmIdentifier, String reviewText, double rating) {
         LocalDate reviewDate = LocalDate.now();
-        Review review = new Review(reviewDate,author,reviewText,rating);
+        Review review = new Review(null,reviewDate,author,reviewText,rating);
         return filmAccessService.addNewReview(filmIdentifier,review);
     }
 
@@ -49,7 +49,7 @@ public class UserOperations implements UserService {
     public boolean updateReview(User authorOfCurrentReview, String filmIdentifier, Long currentReviewId, String reviewText, double rating) {
         LocalDate currentDate = LocalDate.now();
         for (Review currentReview: filmAccessService.getFilmReviews(filmIdentifier)) {
-            if (currentReview.getReviewId() == currentReviewId && currentReview.getAuthor().equals(authorOfCurrentReview)) {
+            if (currentReview.getReviewId().equals(currentReviewId) && currentReview.getAuthor().equals(authorOfCurrentReview)) {
                 return filmAccessService.updateReview(currentReviewId,currentDate,reviewText,rating);
             }
         }

@@ -18,7 +18,7 @@ import java.util.List;
 @Component
 public class FilmAccessDB implements FilmAccessService {
 
-    @Autowired
+    @Autowired 
     private MoviesDB DBconnection;
 
     public boolean createFilmTable() throws SQLException {
@@ -94,6 +94,7 @@ public class FilmAccessDB implements FilmAccessService {
             ResultSet queryResult = preparedStatement.executeQuery();
             while (queryResult.next()) {
                 Review review = new Review(
+                        queryResult.getLong("reviewId"),
                         queryResult.getDate("createDate").toLocalDate(),
                         user,
                         queryResult.getString("reviewText"),
