@@ -33,13 +33,12 @@ public class TestSpring {
             System.out.println(review);
         }
 
+
         UserService userService = context.getBean("userOperations", UserOperations.class);
 
         User user = userService.signIn("egorka99","qwerty123");
 
         System.out.println(user.getName());
-
-
 
     }
 }

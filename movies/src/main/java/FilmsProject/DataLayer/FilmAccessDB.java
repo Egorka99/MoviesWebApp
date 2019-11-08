@@ -115,7 +115,8 @@ public class FilmAccessDB implements FilmAccessService {
             preparedStatement.setString(2, review.getAuthor().getLogin());
             preparedStatement.setDouble(3, review.getRating());
             preparedStatement.setString(4, review.getReviewText());
-            return preparedStatement.execute();
+            preparedStatement.execute();
+            return true;
         } catch (SQLException ex) {
             System.err.println("Не удалось добавить отзыв");
             return false;
