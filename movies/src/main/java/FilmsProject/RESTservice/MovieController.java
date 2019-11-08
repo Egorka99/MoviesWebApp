@@ -30,12 +30,12 @@ public class MovieController {
 
      //Test data: http://localhost:8081/webapp/movie/addReview?filmIdentifier=326&reviewText=GoodFilm&rating=8.6
      @POST
-     @Path("/addReview")
-     public Response addReview(@QueryParam("filmIdentifier") String filmIdentifier,
+     @Path("/{id}/review")
+     public Response addReview(@PathParam("id") String id,
                                @QueryParam("reviewText") String reviewText, @QueryParam("rating") double rating) {
           User user = new User();
-
-          if (userService.writeReview(user,filmIdentifier,reviewText,rating)) {
+          //TODO исправить затычку
+          if (userService.writeReview(user,id,reviewText,rating)) {
                return Response
                        .status(Response.Status.OK)
                        .entity("Отзыв успешно добавлен!")

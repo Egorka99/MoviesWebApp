@@ -15,7 +15,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
 
-
 public class TestSpring {
 
     @Autowired

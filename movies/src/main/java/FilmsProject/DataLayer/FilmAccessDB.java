@@ -91,6 +91,7 @@ public class FilmAccessDB implements FilmAccessService {
         try {
             preparedStatement.setString(1, filmIdentifier);
             User user = new User();
+            //TODO Исправть данную затычку, подгоняя юзера из БД по логину (В таблице Юзер есть поле userLogin)
             ResultSet queryResult = preparedStatement.executeQuery();
             while (queryResult.next()) {
                 Review review = new Review(
@@ -110,6 +111,7 @@ public class FilmAccessDB implements FilmAccessService {
 
     @Override
     public boolean addNewReview(String filmIdentifier, Review review) {
+        //TODO Переделать полностью в препаред
         PreparedStatement preparedStatement = DBconnection.getPreparedStatement("INSERT INTO Review VALUES (NULL, ?, '" + review.getCreateDate() + "', ?, ?, ?);");
         try {
             preparedStatement.setString(1, filmIdentifier);
@@ -140,6 +142,7 @@ public class FilmAccessDB implements FilmAccessService {
 
     @Override
     public boolean updateReview(Long reviewId, LocalDate date, String reviewText, double rating) {
+        //TODO Переделать полностью в препаред
         PreparedStatement preparedStatement = DBconnection.getPreparedStatement("UPDATE Review SET " +
                 "createDate = '" + date + "', " +
                 "reviewText = ?, " +
