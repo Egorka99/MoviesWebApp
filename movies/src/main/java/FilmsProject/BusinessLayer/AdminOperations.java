@@ -16,7 +16,7 @@ public class AdminOperations implements AdminService {
     private FilmAccessService filmAccessService;
 
     @Override
-    public boolean updateReview(Admin editor, int reviewId, String reviewText, double rating) {
+    public boolean updateReview(Admin editor, Long reviewId, String reviewText, double rating) {
         LocalDate currentDate = LocalDate.now();
         if (editor != null) {
            return filmAccessService.updateReview(reviewId,currentDate,reviewText,rating);
@@ -25,7 +25,7 @@ public class AdminOperations implements AdminService {
     }
 
     @Override
-    public boolean deleteReview(Admin editor, int reviewId) {
+    public boolean deleteReview(Admin editor, Long reviewId) {
         if (editor != null) {
            return filmAccessService.deleteReview(reviewId);
         }

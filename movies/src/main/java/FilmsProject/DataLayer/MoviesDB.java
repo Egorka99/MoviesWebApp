@@ -19,16 +19,6 @@ public class MoviesDB {
         connection = DriverManager.getConnection(DB_URL);
     }
 
-    public Statement getStatement() {
-        try {
-            return connection.createStatement();
-        }
-        catch (SQLException ex) {
-            System.err.println("Не удалось получить объект Statement");
-            return null;
-        }
-    }
-
     public PreparedStatement getPreparedStatement(String sql) {
         try {
             return connection.prepareStatement(sql);

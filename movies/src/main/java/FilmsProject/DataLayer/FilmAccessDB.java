@@ -125,10 +125,10 @@ public class FilmAccessDB implements FilmAccessService {
     }
 
     @Override
-    public boolean deleteReview(int reviewId) {
+    public boolean deleteReview(Long reviewId) {
         PreparedStatement preparedStatement = DBconnection.getPreparedStatement("DELETE FROM Review WHERE reviewId = ?");
         try {
-            preparedStatement.setInt(1, reviewId);
+            preparedStatement.setLong(1, reviewId);
             return preparedStatement.execute();
         } catch (SQLException ex) {
             System.err.println("Не удалось удалить отзыв");
@@ -137,7 +137,7 @@ public class FilmAccessDB implements FilmAccessService {
     }
 
     @Override
-    public boolean updateReview(int reviewId, LocalDate date, String reviewText, double rating) {
+    public boolean updateReview(Long reviewId, LocalDate date, String reviewText, double rating) {
         PreparedStatement preparedStatement = DBconnection.getPreparedStatement("UPDATE Review SET " +
                 "createDate = " + date + ", " +
                 "reviewText = ?, " +
@@ -146,7 +146,7 @@ public class FilmAccessDB implements FilmAccessService {
         try {
             preparedStatement.setString(1, reviewText);
             preparedStatement.setDouble(2, rating);
-            preparedStatement.setInt(3, reviewId);
+            preparedStatement.setLong(3, reviewId);
             return preparedStatement.execute();
         } catch (SQLException ex) {
             System.err.println("Не удалось изменить отзыв");

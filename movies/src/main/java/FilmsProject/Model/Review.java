@@ -1,13 +1,12 @@
 package FilmsProject.Model;
 
-import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
 public class Review {
-    private static int maxId;
+    private static Long maxId;
 
-    private int ReviewId;
+    private Long reviewId;
     private LocalDate createDate;
     private Person author;
     private String reviewText;
@@ -18,7 +17,7 @@ public class Review {
         this.author = author;
         this.reviewText = reviewText;
         Rating = rating;
-        ReviewId = maxId+1;
+        reviewId = maxId+1;
         maxId++;
     }
 
@@ -41,8 +40,8 @@ public class Review {
         return Rating;
     }
 
-    public int getReviewId() {
-        return ReviewId;
+    public Long getReviewId() {
+        return reviewId;
     }
 
     @Override
