@@ -1,8 +1,10 @@
 package FilmsProject.RESTservice;
 
+import FilmsProject.Interfaces.AdminService;
 import FilmsProject.Interfaces.FilmService;
 import FilmsProject.Interfaces.UserAccessService;
 import FilmsProject.Interfaces.UserService;
+import FilmsProject.Model.Admin;
 import FilmsProject.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -25,6 +27,12 @@ public class MovieController {
 
      @Autowired
      private UserAccessService userAccessService;
+
+     @Autowired
+     private AdminService adminService;
+
+     @Autowired
+     private Admin admin;
 
      @GET
      @Path("/{id}")
@@ -59,9 +67,11 @@ public class MovieController {
                                   @QueryParam("filmIdentifier") String filmIdentifier,
                                   @QueryParam("reviewId") Long currentReviewId,
                                   @QueryParam("reviewText") String reviewText,
-                                  @QueryParam("rating") double rating) {
+                                  @QueryParam("rating") double rating)
+     {
 
          User user = userAccessService.getUserByLogin(authorLogin);
+
 
          if (userService.updateReview(user,filmIdentifier,currentReviewId,reviewText,rating)) {
              return Response
@@ -70,11 +80,27 @@ public class MovieController {
                      .build();
          }
 
-        return Response
+         return Response
                  .status(Response.Status.INTERNAL_SERVER_ERROR)
                  .entity("Не удалось изменить отзыв")
                  .build();
 
+     }
+
+     @DELETE
+     @Path("/review/{id}")
+     public Response deleteReview(@PathParam("id") Long reviewId) {
+         if (adminService.deleteReview(admin,reviewId)) {
+             return Response
+                     .status(Response.Status.OK)
+                     .entity("Отзыв успешно удален!")
+                     .build();
+         }
+
+         return Response
+                 .status(Response.Status.INTERNAL_SERVER_ERROR)
+                 .entity("Не удалось удалить отзыв")
+                 .build();
      }
 
 
