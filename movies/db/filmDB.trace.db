@@ -479,3 +479,9 @@ No data is available [2000-200]
 2019-11-09 15:14:53 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
 No data is available [2000-200]
+2019-11-10 15:20:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-10 15:20:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]

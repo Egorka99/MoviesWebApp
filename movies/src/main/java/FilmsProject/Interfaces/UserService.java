@@ -7,4 +7,5 @@ public interface UserService {
     boolean signUp(String userName, String userLogin, String userPassword);
     boolean writeReview(User author, String filmIdentifier,String reviewText,double rating);
     boolean updateReview(User authorOfCurrentReview, String filmidentifier, Long currentReviewId,String reviewText,double rating);
+    
 }

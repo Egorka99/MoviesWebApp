@@ -60,7 +60,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestSpring">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Appliation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FilmsProject.RESTservice.Appliation" />
       <module name="movies" />
@@ -128,8 +128,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestSpring" />
         <item itemvalue="Application.Application" />
+        <item itemvalue="Application.TestSpring" />
         <item itemvalue="Application.Appliation" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.DatabaseApplication" />

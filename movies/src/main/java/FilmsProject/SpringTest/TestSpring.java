@@ -28,12 +28,6 @@ public class TestSpring {
 
        FilmOperations filmOperations = context.getBean("filmOperations",FilmOperations.class);
 
-        List<Film> filmsList = filmOperations.searchFilmByField("IMDBIdentifier","77164");
-
-        for (Film film: filmsList) {
-            new ConsoleInfo().getInfoln(film);
-        }
-
         UserService userService = context.getBean("userOperations", UserOperations.class);
         User user = userService.signIn("egorka99","qwerty123");
 

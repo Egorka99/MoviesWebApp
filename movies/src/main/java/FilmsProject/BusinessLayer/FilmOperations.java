@@ -17,9 +17,10 @@ public class FilmOperations implements FilmService {
     @Autowired
     private FilmAccessService filmAccessService;
 
+    //TODO сделать енамом
     @Override
-    public List<Film> searchFilmByField(String field, String value) {
-       return filmAccessService.getFilmsByProperty(field,value);
+    public List<Film> searchFilmsByProperty(String property, String value) {
+        return filmAccessService.getFilmsByField(property,value);
     }
 
     @Override
@@ -31,7 +32,7 @@ public class FilmOperations implements FilmService {
     public Object[] getFilmDetails(String filmIdentifier) {
         List<Object> filmInfoAndReviews = new ArrayList<>();
 
-        filmInfoAndReviews.add(searchFilmByField("IMDBIdentifier",filmIdentifier));
+        filmInfoAndReviews.add(searchFilmsByProperty("IMDBIdentifier",filmIdentifier));
         filmInfoAndReviews.add(getReviews(filmIdentifier));
 
         return filmInfoAndReviews.toArray();

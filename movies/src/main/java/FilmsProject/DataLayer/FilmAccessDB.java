@@ -65,10 +65,11 @@ public class FilmAccessDB implements FilmAccessService {
         DBconnection.getPreparedStatement("INSERT INTO Review VALUES (NULL, '77164', '2017-10-03', 'user723', 5.5, 'description');").execute();
     }
 
+
     @Override
-    public List<Film> getFilmsByProperty(String property, String value)  {
+    public List<Film> getFilmsByField(String field, String value) {
         List<Film> foundFilms = new ArrayList<>();
-        PreparedStatement preparedStatement = DBconnection.getPreparedStatement("SELECT * FROM FILM WHERE " + property + " = ?");
+        PreparedStatement preparedStatement = DBconnection.getPreparedStatement("SELECT * FROM FILM WHERE " + field + " = ?");
         try {
             preparedStatement.setString(1, value);
             ResultSet queryResult = preparedStatement.executeQuery();
@@ -99,8 +100,8 @@ public class FilmAccessDB implements FilmAccessService {
 
             //TODO Исправть данную затычку, подгоняя юзера из БД по логину (В таблице Юзер есть поле userLogin)
             ResultSet queryResult = preparedStatement.executeQuery();
-            // User user = userAccessService.getUserByLogin(queryResult.getString("authorLogin"));
-            User user = new User();
+             User user = userAccessService.getUserByLogin(queryResult.getString("authorLogin"));
+           // User user = new User();
             while (queryResult.next()) {
                 Review review = new Review(
                         queryResult.getLong("reviewId"),

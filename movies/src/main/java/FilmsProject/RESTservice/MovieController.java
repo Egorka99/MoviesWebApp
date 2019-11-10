@@ -5,12 +5,14 @@ import FilmsProject.Interfaces.FilmService;
 import FilmsProject.Interfaces.UserAccessService;
 import FilmsProject.Interfaces.UserService;
 import FilmsProject.Model.Admin;
+import FilmsProject.Model.Film;
 import FilmsProject.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 
 @Path("/movie")
@@ -38,6 +40,13 @@ public class MovieController {
      @Path("/{id}")
      public Object[] getById(@PathParam("id") String id) {
         return filmService.getFilmDetails(id);
+     }
+
+     @GET
+     @Path("/view")
+     public List<Film> searchFilm(@QueryParam("property") String property, @QueryParam("value") String value) {
+
+        return filmService.searchFilmsByProperty(property,value);
      }
 
      //Test data: http://localhost:8081/webapp/movie/addReview?filmIdentifier=326&reviewText=GoodFilm&rating=8.6
@@ -102,6 +111,8 @@ public class MovieController {
                  .entity("Не удалось удалить отзыв")
                  .build();
      }
+
+
 
 
 
