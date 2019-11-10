@@ -1,4 +1,4 @@
-package FilmsProject.Test;
+package FilmsProject.SpringTest;
 
 import org.springframework.stereotype.Component;
 

@@ -1,6 +1,8 @@
 package FilmsProject.DataLayer;
 
 import FilmsProject.Interfaces.FilmAccessService;
+import FilmsProject.Interfaces.UserAccessService;
+import FilmsProject.Interfaces.UserService;
 import FilmsProject.Model.Film;
 import FilmsProject.Model.FilmType;
 import FilmsProject.Model.Review;
@@ -8,6 +10,7 @@ import FilmsProject.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,6 +23,9 @@ public class FilmAccessDB implements FilmAccessService {
 
     @Autowired
     private MoviesDB DBconnection;
+
+    @Autowired
+    private UserAccessService userAccessService;
 
     public boolean createFilmTable() throws SQLException {
         return DBconnection.getPreparedStatement("CREATE TABLE IF NOT EXISTS Film(\n" +
@@ -59,10 +65,11 @@ public class FilmAccessDB implements FilmAccessService {
         DBconnection.getPreparedStatement("INSERT INTO Review VALUES (NULL, '77164', '2017-10-03', 'user723', 5.5, 'description');").execute();
     }
 
+
     @Override
-    public List<Film> getFilmsByProperty(String property, String value)  {
+    public List<Film> getFilmsByField(String field, String value) {
         List<Film> foundFilms = new ArrayList<>();
-        PreparedStatement preparedStatement = DBconnection.getPreparedStatement("SELECT * FROM FILM WHERE " + property + " = ?");
+        PreparedStatement preparedStatement = DBconnection.getPreparedStatement("SELECT * FROM FILM WHERE " + field + " = ?");
         try {
             preparedStatement.setString(1, value);
             ResultSet queryResult = preparedStatement.executeQuery();
@@ -90,10 +97,14 @@ public class FilmAccessDB implements FilmAccessService {
         PreparedStatement preparedStatement = DBconnection.getPreparedStatement("SELECT * FROM Review WHERE filmIdentifier = ?");
         try {
             preparedStatement.setString(1, filmIdentifier);
-            User user = new User();
+
+            //TODO Исправть данную затычку, подгоняя юзера из БД по логину (В таблице Юзер есть поле userLogin)
             ResultSet queryResult = preparedStatement.executeQuery();
+             User user = userAccessService.getUserByLogin(queryResult.getString("authorLogin"));
+           // User user = new User();
             while (queryResult.next()) {
                 Review review = new Review(
+                        queryResult.getLong("reviewId"),
                         queryResult.getDate("createDate").toLocalDate(),
                         user,
                         queryResult.getString("reviewText"),
@@ -103,19 +114,22 @@ public class FilmAccessDB implements FilmAccessService {
             }
         } catch (SQLException ex) {
             System.err.println("Не удалось получить список отзывов.");
+            ex.printStackTrace();
         }
         return filmReviews;
     }
 
     @Override
     public boolean addNewReview(String filmIdentifier, Review review) {
-        PreparedStatement preparedStatement = DBconnection.getPreparedStatement("INSERT INTO Review VALUES (NULL, ?, '" + review.getCreateDate() + "', ?, ?, ?);");
+        PreparedStatement preparedStatement = DBconnection.getPreparedStatement("INSERT INTO Review VALUES (NULL, ?, ?, ?, ?, ?);");
         try {
             preparedStatement.setString(1, filmIdentifier);
-            preparedStatement.setString(2, review.getAuthor().getLogin());
-            preparedStatement.setDouble(3, review.getRating());
-            preparedStatement.setString(4, review.getReviewText());
-            return preparedStatement.execute();
+            preparedStatement.setDate(2, Date.valueOf(review.getCreateDate()));
+            preparedStatement.setString(3, review.getAuthor().getLogin());
+            preparedStatement.setDouble(4, review.getRating());
+            preparedStatement.setString(5, review.getReviewText());
+            preparedStatement.execute();
+            return true;
         } catch (SQLException ex) {
             System.err.println("Не удалось добавить отзыв");
             return false;
@@ -124,11 +138,12 @@ public class FilmAccessDB implements FilmAccessService {
     }
 
     @Override
-    public boolean deleteReview(int reviewId) {
+    public boolean deleteReview(Long reviewId) {
         PreparedStatement preparedStatement = DBconnection.getPreparedStatement("DELETE FROM Review WHERE reviewId = ?");
         try {
-            preparedStatement.setInt(1, reviewId);
-            return preparedStatement.execute();
+            preparedStatement.setLong(1, reviewId);
+            preparedStatement.execute();
+            return true;
         } catch (SQLException ex) {
             System.err.println("Не удалось удалить отзыв");
             return false;
@@ -136,19 +151,23 @@ public class FilmAccessDB implements FilmAccessService {
     }
 
     @Override
-    public boolean updateReview(int reviewId, LocalDate date, String reviewText, double rating) {
+    public boolean updateReview(Long reviewId, LocalDate date, String reviewText, double rating) {
         PreparedStatement preparedStatement = DBconnection.getPreparedStatement("UPDATE Review SET " +
-                "createDate = " + date + ", " +
+                "createDate = ?, " +
                 "reviewText = ?, " +
                 "rating = ? " +
                 "WHERE reviewId = ?");
         try {
-            preparedStatement.setString(1, reviewText);
-            preparedStatement.setDouble(2, rating);
-            preparedStatement.setInt(3, reviewId);
-            return preparedStatement.execute();
+            preparedStatement.setDate(1,Date.valueOf(date));
+            preparedStatement.setString(2,reviewText);
+            preparedStatement.setDouble(3,rating);
+            preparedStatement.setLong(4,reviewId);
+            preparedStatement.execute();
+            return true;
+
         } catch (SQLException ex) {
             System.err.println("Не удалось изменить отзыв");
+            ex.printStackTrace();
             return false;
         }
     }
