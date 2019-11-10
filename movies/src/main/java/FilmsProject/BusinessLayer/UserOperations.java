@@ -49,7 +49,9 @@ public class UserOperations implements UserService {
     public boolean updateReview(User authorOfCurrentReview, String filmIdentifier, Long currentReviewId, String reviewText, double rating) {
         LocalDate currentDate = LocalDate.now();
         for (Review currentReview: filmAccessService.getFilmReviews(filmIdentifier)) {
-            if (currentReview.getReviewId().equals(currentReviewId) && currentReview.getAuthor().equals(authorOfCurrentReview)) {
+            System.out.println(currentReview.getAuthor().getLogin());
+            //TODO Вернуть обратно проверку на автора
+            if (currentReview.getReviewId().equals(currentReviewId)) {
                 return filmAccessService.updateReview(currentReviewId,currentDate,reviewText,rating);
             }
         }

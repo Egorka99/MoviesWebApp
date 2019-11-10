@@ -381,3 +381,101 @@ Caused by: java.lang.IllegalArgumentException: 2000
 	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:166)
 	at org.h2.value.ValueDate.parse(ValueDate.java:72)
 	... 13 more
+2019-11-09 14:21:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Параметр "#5" не установлен
+Parameter "#5" is not set; SQL statement:
+INSERT INTO Review VALUES (NULL, ?, ?, ?, ?, ?); [90012-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:590)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:83)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:182)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:187)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:240)
+	at FilmsProject.DataLayer.FilmAccessDB.addNewReview(FilmAccessDB.java:123)
+	at FilmsProject.BusinessLayer.UserOperations.writeReview(UserOperations.java:45)
+	at FilmsProject.SpringTest.TestSpring.main(TestSpring.java:47)
+2019-11-09 14:21:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Параметр "#5" не установлен
+Parameter "#5" is not set; SQL statement:
+INSERT INTO Review VALUES (NULL, ?, ?, ?, ?, ?); [90012-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:590)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:83)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:182)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:187)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:240)
+	at FilmsProject.DataLayer.FilmAccessDB.addNewReview(FilmAccessDB.java:123)
+	at FilmsProject.BusinessLayer.UserOperations.writeReview(UserOperations.java:45)
+	at FilmsProject.SpringTest.TestSpring.main(TestSpring.java:47)
+2019-11-09 14:28:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 14:29:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 14:29:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 14:37:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 14:38:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 14:41:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 14:42:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 14:42:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 14:42:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 14:43:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 14:43:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 14:46:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 14:50:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 14:59:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 15:05:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 15:08:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 15:12:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 15:12:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 15:12:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 15:14:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 15:14:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2019-11-09 15:14:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]

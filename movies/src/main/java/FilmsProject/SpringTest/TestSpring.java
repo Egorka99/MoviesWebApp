@@ -40,14 +40,15 @@ public class TestSpring {
         AdminService adminService = context.getBean("adminOperations", AdminService.class);
         Admin admin = context.getBean("admin", Admin.class);
 
-       // adminService.deleteReview(admin,210L);
+        userService.updateReview(user,"77164",316L, "bla bla",4.6);
 
-        adminService.updateReview(admin,213L,"bla bla", 1.1);
+          //  userService.writeReview(user,"77164", "bla bla bla", 8.5);
 
         List<Review> reviewList = filmOperations.getReviews("77164");
 
         for (Review review : reviewList) {
             System.out.println(review);
+            System.out.println(review.getReviewText());
         }
 
     }
