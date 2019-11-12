@@ -1,8 +1,7 @@
-package FilmsProject.DataLayer;
+package FilmsProject.DataLayer.jdbc;
 
 import FilmsProject.Interfaces.FilmAccessService;
 import FilmsProject.Interfaces.UserAccessService;
-import FilmsProject.Interfaces.UserService;
 import FilmsProject.Model.Film;
 import FilmsProject.Model.FilmType;
 import FilmsProject.Model.Review;

@@ -1,4 +1,4 @@
-package FilmsProject.DataLayer;
+package FilmsProject.DataLayer.jdbc;
 
 import FilmsProject.Interfaces.UserAccessService;
 import FilmsProject.Model.User;
@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 
 @Component

@@ -1,8 +1,5 @@
 package FilmsProject.BusinessLayer;
 
-import FilmsProject.DataLayer.FilmAccessDB;
-import FilmsProject.DataLayer.MoviesDB;
-import FilmsProject.DataLayer.UserAccessDB;
 import FilmsProject.Interfaces.FilmAccessService;
 import FilmsProject.Interfaces.UserAccessService;
 import FilmsProject.Interfaces.UserService;
@@ -11,9 +8,6 @@ import FilmsProject.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalDate;
 
 @Component

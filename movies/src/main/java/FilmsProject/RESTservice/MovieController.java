@@ -1,5 +1,6 @@
 package FilmsProject.RESTservice;
 
+import FilmsProject.DataLayer.jpa.UserDAO;
 import FilmsProject.Interfaces.AdminService;
 import FilmsProject.Interfaces.FilmService;
 import FilmsProject.Interfaces.UserAccessService;
@@ -35,6 +36,9 @@ public class MovieController {
 
      @Autowired
      private Admin admin;
+
+     @Autowired
+     private static UserDAO userDAO;
 
      @GET
      @Path("/{id}")
@@ -112,7 +116,19 @@ public class MovieController {
                  .build();
      }
 
+    @GET
+    @Path("/getUsers")
+    public void getUsers() {
 
+        Iterable<User> all = userDAO.findAll();
+
+        StringBuilder sb = new StringBuilder();
+
+        all.forEach(p -> sb.append(p.getName()).append("<br>"));
+
+        System.out.println(sb.toString());
+    }
+ 
 
 
 

@@ -1,15 +1,11 @@
 package FilmsProject.View;
 
-import FilmsProject.BusinessLayer.FilmOperations;
 import FilmsProject.BusinessLayer.UserOperations;
-import FilmsProject.DataLayer.FilmAccessDB;
-import FilmsProject.DataLayer.UserAccessDB;
-import FilmsProject.Interfaces.FilmAccessService;
+import FilmsProject.DataLayer.jdbc.FilmAccessDB;
+import FilmsProject.DataLayer.jdbc.UserAccessDB;
 import FilmsProject.Interfaces.UserService;
-import FilmsProject.Model.User;
 
 import java.sql.SQLException;
-import java.util.function.DoubleToIntFunction;
 
 public class Test {
     public static void addTestData(){

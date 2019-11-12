@@ -1,6 +1,5 @@
 package FilmsProject.BusinessLayer;
 
-import FilmsProject.DataLayer.FilmAccessDB;
 import FilmsProject.Interfaces.FilmAccessService;
 import FilmsProject.Interfaces.FilmService;
 import FilmsProject.Model.Film;
