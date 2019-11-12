@@ -12,8 +12,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -87,8 +87,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DatabaseApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FilmsProject.View.DatabaseApplication" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FilmsProject.View.Test" />
       <module name="movies" />
       <extension name="coverage">
         <pattern>
@@ -100,12 +100,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FilmsProject.View.Test" />
+    <configuration name="TestJPA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FilmsProject.DataLayer.jpa.TestJPA" />
       <module name="movies" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="FilmsProject.View.*" />
+          <option name="PATTERN" value="FilmsProject.DataLayer.jpa.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -129,10 +129,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Application" />
+        <item itemvalue="Application.TestJPA" />
         <item itemvalue="Application.TestSpring" />
         <item itemvalue="Application.Appliation" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.DatabaseApplication" />
       </list>
     </recent_temporary>
   </component>
