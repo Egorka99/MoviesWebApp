@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class FilmAccessDB implements FilmAccessService {
+public class FilmAccessJDDB implements FilmAccessService {
 
     @Autowired
     private MoviesDB DBconnection;

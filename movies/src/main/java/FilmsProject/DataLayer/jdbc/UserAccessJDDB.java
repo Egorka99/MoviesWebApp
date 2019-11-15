@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 
 @Component
-public class UserAccessDB implements UserAccessService {
+public class UserAccessJDDB implements UserAccessService {
 
     @Autowired
     private MoviesDB DBconnection;

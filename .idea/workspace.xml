@@ -29,7 +29,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="ToolWindowDebug.ShowToolbar" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AccentureJava" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -105,7 +105,7 @@
       <module name="movies" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="FilmsProject.DataLayer.jpa.*" />
+          <option name="PATTERN" value="FilmsProject.Model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -129,8 +129,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Application" />
-        <item itemvalue="Application.TestJPA" />
         <item itemvalue="Application.TestSpring" />
+        <item itemvalue="Application.TestJPA" />
         <item itemvalue="Application.Appliation" />
         <item itemvalue="Application.Test" />
       </list>

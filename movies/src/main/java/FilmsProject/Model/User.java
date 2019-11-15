@@ -1,5 +1,4 @@
 package FilmsProject.Model;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
