@@ -1,5 +1,7 @@
 package FilmsProject.DataLayer.jpa;
 
+import FilmsProject.Model.Film;
+import FilmsProject.Model.Review;
 import FilmsProject.Model.User;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.stereotype.Component;
@@ -23,6 +25,20 @@ public class UserAccessJPA {
     {
         TypedQuery<User> q = manager.createQuery(
                 "Select c from User c", User.class);
+        return  q.getResultList();
+    }
+
+    public List<Film> getAllFilms()
+    {
+        TypedQuery<Film> q = manager.createQuery(
+                "Select c from Film c", Film.class);
+        return  q.getResultList();
+    }
+
+    public List<Review> getAllReviews()
+    {
+        TypedQuery<Review> q = manager.createQuery(
+                "Select c from Review c", Review.class);
         return  q.getResultList();
     }
 

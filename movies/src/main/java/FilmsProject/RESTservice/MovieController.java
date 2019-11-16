@@ -7,6 +7,7 @@ import FilmsProject.Interfaces.UserAccessService;
 import FilmsProject.Interfaces.UserService;
 import FilmsProject.Model.Admin;
 import FilmsProject.Model.Film;
+import FilmsProject.Model.Review;
 import FilmsProject.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -20,6 +21,7 @@ import java.util.List;
 @Consumes("application/json")
 @Produces("application/json")
 @Component
+//TODO Ну тут переименовать надо и вообще подумать над разделением
 public class MovieController {
 
 //     @Autowired
@@ -121,7 +123,19 @@ public class MovieController {
     public List<User> getUsers() {
          return userAccessJPA.getAll();
     }
- 
+
+    @GET
+    @Path("/getFilms")
+    public List<Film> getFilms() {
+        return userAccessJPA.getAllFilms();
+    }
+
+    @GET
+    @Path("/getReviews")
+    public List<Review> getReviews() {
+        return userAccessJPA.getAllReviews();
+    }
+
 
 
 

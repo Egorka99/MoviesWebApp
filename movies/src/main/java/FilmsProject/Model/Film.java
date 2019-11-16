@@ -2,26 +2,35 @@ package FilmsProject.Model;
 
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Film {
+
+    @Column
     private String title;
 
+    @Id
+    @Column(name = "imdb_identifier",unique = true)
     private String imdbIdentifier;
 
+    @Column(name = "film_type")
+    @Enumerated(EnumType.ORDINAL)
     private FilmType filmType;
 
+    @Column
     private String genre;
 
+    @Column(name = "release_date")
     private LocalDate releaseDate;
 
+    @Column
     private double rating;
 
+    @Column
     private String description;
 
     public Film(String title, String imdbIdentifier, FilmType filmType, String genre, LocalDate releaseDate, double rating,

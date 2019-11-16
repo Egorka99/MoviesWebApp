@@ -28,23 +28,24 @@ public class FilmAccessJDDB implements FilmAccessService {
 
     public boolean createFilmTable() throws SQLException {
         return DBconnection.getPreparedStatement("CREATE TABLE IF NOT EXISTS Film(\n" +
-                "                IMDBidentifier VARCHAR(20) PRIMARY KEY, \n" +
+                "                imdb_identifier VARCHAR(20) PRIMARY KEY, \n" +
                 "                title VARCHAR(50) NOT NULL, \n" +
-                "                filmtype INTEGER NOT NULL,\n" +
+                "                film_type INTEGER NOT NULL,\n" +
                 "                genre VARCHAR(20) NOT NULL,\n" +
-                "                releasedate DATE NOT NULL,\n" +
+                "                release_date DATE NOT NULL,\n" +
                 "                rating DOUBLE NOT NULL,\n" +
                 "                description VARCHAR(1000) NOT NULL)").execute();
     }
 
+    //TODO
     public boolean createReviewTable() throws SQLException {
         return DBconnection.getPreparedStatement("CREATE TABLE IF NOT EXISTS Review(\n" +
-                "                reviewId INTEGER AUTO_INCREMENT PRIMARY KEY, \n" +
-                "                filmIdentifier VARCHAR(50) NOT NULL, \n" +
-                "                createDate DATE NOT NULL, \n" +
-                "                authorLogin VARCHAR(50),\n" +
+                "                review_id INTEGER AUTO_INCREMENT PRIMARY KEY, \n" +
+                "                film_identifier VARCHAR(50) NOT NULL, \n" +
+                "                create_date DATE NOT NULL, \n" +
+                "                author_login VARCHAR(50),\n" +
                 "                rating DOUBLE NOT NULL,\n" +
-                "                reviewText VARCHAR(500) NOT NULL)").execute();
+                "                review_text VARCHAR(500) NOT NULL)").execute();
     }
 
     public void addTestData() throws SQLException {
@@ -97,15 +98,13 @@ public class FilmAccessJDDB implements FilmAccessService {
         try {
             preparedStatement.setString(1, filmIdentifier);
 
-            //TODO Исправть данную затычку, подгоняя юзера из БД по логину (В таблице Юзер есть поле userLogin)
             ResultSet queryResult = preparedStatement.executeQuery();
-             User user = userAccessService.getUserByLogin(queryResult.getString("authorLogin"));
            // User user = new User();
             while (queryResult.next()) {
                 Review review = new Review(
                         queryResult.getLong("reviewId"),
                         queryResult.getDate("createDate").toLocalDate(),
-                        user,
+                        queryResult.getString("author_login"),
                         queryResult.getString("reviewText"),
                         queryResult.getDouble("rating")
                 );
@@ -124,7 +123,7 @@ public class FilmAccessJDDB implements FilmAccessService {
         try {
             preparedStatement.setString(1, filmIdentifier);
             preparedStatement.setDate(2, Date.valueOf(review.getCreateDate()));
-            preparedStatement.setString(3, review.getAuthor().getLogin());
+            preparedStatement.setString(3, review.getAuthorLogin());
             preparedStatement.setDouble(4, review.getRating());
             preparedStatement.setString(5, review.getReviewText());
             preparedStatement.execute();

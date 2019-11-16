@@ -31,7 +31,7 @@ public class TestSpring {
         AdminService adminService = context.getBean("adminOperations", AdminService.class);
         Admin admin = context.getBean("admin", Admin.class);
 
-        userService.updateReview(user,"77164",316L, "bla bla",4.6);
+        //userService.updateReview(user,"77164",316L, "bla bla",4.6);
 
           //  userService.writeReview(user,"77164", "bla bla bla", 8.5);
 
