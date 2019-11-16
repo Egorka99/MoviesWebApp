@@ -1,22 +1,22 @@
 package FilmsProject.View;
 
 import FilmsProject.BusinessLayer.UserOperations;
-import FilmsProject.DataLayer.jdbc.FilmAccessDB;
-import FilmsProject.DataLayer.jdbc.UserAccessDB;
+import FilmsProject.DataLayer.jdbc.FilmAccessJDDB;
+import FilmsProject.DataLayer.jdbc.UserAccessJDDB;
 import FilmsProject.Interfaces.UserService;
 
 import java.sql.SQLException;
 
 public class Test {
     public static void addTestData(){
-        FilmAccessDB FilmAccessDB = new FilmAccessDB();
-        UserAccessDB userAccessDB = new UserAccessDB();
+        FilmAccessJDDB FilmAccessJDDB = new FilmAccessJDDB();
+        UserAccessJDDB userAccessJDDB = new UserAccessJDDB();
         try {
-            FilmAccessDB.createFilmTable();
-            FilmAccessDB.createReviewTable();
-            userAccessDB.createTable();
-            FilmAccessDB.addTestData();
-            FilmAccessDB.addReviewTestData();
+            FilmAccessJDDB.createFilmTable();
+            FilmAccessJDDB.createReviewTable();
+            userAccessJDDB.createTable();
+            FilmAccessJDDB.addTestData();
+            FilmAccessJDDB.addReviewTestData();
             System.out.println("Успешно!");
         }
         catch (SQLException ex) {

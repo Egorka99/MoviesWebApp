@@ -1,8 +1,8 @@
 package FilmsProject.Model;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Objects;
 
@@ -13,6 +13,7 @@ public class User  {
     @Column(name = "name")
     private String name;
 
+    @Id
     @Column(name = "login", unique = true)
     private String login;
 
