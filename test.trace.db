@@ -2,3 +2,13 @@
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "NSERT[*] INTO REVIEW VALUES (NULL, '326', '2014-10-03', 'user123', 8.9, 'description')"
 Syntax error in SQL statement "NSERT[*] INTO REVIEW VALUES (NULL, '326', '2014-10-03', 'user123', 8.9, 'description')"; SQL statement:
 NSERT INTO Review VALUES (NULL, '326', '2014-10-03', 'user123', 8.9, 'description') [42000-200]
+2019-11-16 23:33:56 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE IF NOT EXISTS GENRE(
+                                GENRE_ID INTEGER PRIMARY KEY, 
+                                GENRE_NAME VARCHAR(20) NOT NULL,[*]"; ожидалось "identifier"
+Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS GENRE(
+                                GENRE_ID INTEGER PRIMARY KEY, 
+                                GENRE_NAME VARCHAR(20) NOT NULL,[*]"; expected "identifier"; SQL statement:
+CREATE TABLE IF NOT EXISTS Genre(
+                                genre_id INTEGER PRIMARY KEY, 
+                                genre_name VARCHAR(20) NOT NULL, [42001-200]

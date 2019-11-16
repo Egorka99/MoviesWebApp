@@ -18,7 +18,7 @@ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
     <property name="hibernate.connection.url" value = "jdbc:h2:./test"/>
     <property name="current_session_context_class" value = "thread"/>
 
-</properties>  
+</properties>
 
 </persistence-unit>
 

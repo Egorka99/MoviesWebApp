@@ -47,7 +47,7 @@ public class FilmAccessJDDB implements FilmAccessService {
                 "                rating DOUBLE NOT NULL,\n" +
                 "                review_text VARCHAR(500) NOT NULL)").execute();
     }
- 
+
     public void addTestData() throws SQLException {
         DBconnection.getPreparedStatement("INSERT INTO Film VALUES ('326', 'The Shawshank Redemption', 0, 'Drama', '1994-10-03', 8.9, 'description');").execute();
         DBconnection.getPreparedStatement("INSERT INTO Film VALUES ('258687', 'Interstellar', 0,'Fantastic', '2014-10-03', 8.6, 'description');").execute();
