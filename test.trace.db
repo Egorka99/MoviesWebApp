@@ -1,0 +1,4 @@
+2019-11-16 23:19:35 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "NSERT[*] INTO REVIEW VALUES (NULL, '326', '2014-10-03', 'user123', 8.9, 'description')"
+Syntax error in SQL statement "NSERT[*] INTO REVIEW VALUES (NULL, '326', '2014-10-03', 'user123', 8.9, 'description')"; SQL statement:
+NSERT INTO Review VALUES (NULL, '326', '2014-10-03', 'user123', 8.9, 'description') [42000-200]
