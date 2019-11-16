@@ -4,23 +4,17 @@ package FilmsProject.Model;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity
 public class Review {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long reviewId;
 
-    @Column(name = "createDate")
     private LocalDate createDate;
 
     //TODO ???
     private User author;
 
-    @Column(name = "reviewText")
     private String reviewText;
 
-    @Column(name = "rating")
     private double Rating;
 
     public Review(Long reviewId, LocalDate createDate, User author, String reviewText, double rating) {
