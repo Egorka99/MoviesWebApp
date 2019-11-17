@@ -55,6 +55,26 @@ public class Review {
         return rating;
     }
 
+    public void setReviewId(Long reviewId) {
+        this.reviewId = reviewId;
+    }
+
+    public void setCreateDate(LocalDate createDate) {
+        this.createDate = createDate;
+    }
+
+    public void setAuthorLogin(String authorLogin) {
+        this.authorLogin = authorLogin;
+    }
+
+    public void setReviewText(String reviewText) {
+        this.reviewText = reviewText;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
     @Override
     public String toString() {
         return "Отзыв № "+getReviewId()+". Автор: "+getAuthorLogin()+". Дата создания: "+getCreateDate()+". Оценка: "+getRating()+"";

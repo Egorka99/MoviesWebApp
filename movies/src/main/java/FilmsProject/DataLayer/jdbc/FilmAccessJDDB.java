@@ -37,7 +37,6 @@ public class FilmAccessJDDB implements FilmAccessService {
                 "                description VARCHAR(1000) NOT NULL)").execute();
     }
 
-    //TODO
     public boolean createReviewTable() throws SQLException {
         return DBconnection.getPreparedStatement("CREATE TABLE IF NOT EXISTS Review(\n" +
                 "                review_id INTEGER AUTO_INCREMENT PRIMARY KEY, \n" +

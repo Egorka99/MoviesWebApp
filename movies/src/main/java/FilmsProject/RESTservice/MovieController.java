@@ -5,10 +5,7 @@ import FilmsProject.Interfaces.AdminService;
 import FilmsProject.Interfaces.FilmService;
 import FilmsProject.Interfaces.UserAccessService;
 import FilmsProject.Interfaces.UserService;
-import FilmsProject.Model.Admin;
-import FilmsProject.Model.Film;
-import FilmsProject.Model.Review;
-import FilmsProject.Model.User;
+import FilmsProject.Model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -136,9 +133,10 @@ public class MovieController {
         return userAccessJPA.getAllReviews();
     }
 
-
-
-
-
+    @GET
+    @Path("/getGenres")
+    public List<Genre> getGenres() {
+        return userAccessJPA.getAllGenres();
+    }
 
 }

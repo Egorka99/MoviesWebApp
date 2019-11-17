@@ -21,6 +21,7 @@ public class Film {
     @Enumerated(EnumType.ORDINAL)
     private FilmType filmType;
 
+    //TODO Убрать genre
     @Column
     private String genre;
 
@@ -32,6 +33,12 @@ public class Film {
 
     @Column
     private String description;
+
+    @ManyToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER)
+    @JoinTable(name = "FILM_GENRE",
+            joinColumns = {@JoinColumn(name = "film_id")},
+            inverseJoinColumns = {@JoinColumn(name = "genre_id")})
+    private List<Genre> genres = new ArrayList<>();
 
     public Film(String title, String imdbIdentifier, FilmType filmType, String genre, LocalDate releaseDate, double rating,
                 String description) {
@@ -45,6 +52,10 @@ public class Film {
     }
 
     public Film() {
+    }
+
+    public void addGenre(Genre genre){
+        genres.add(genre);
     }
 
     public String getTitle() {
@@ -74,5 +85,34 @@ public class Film {
     public String getDescription() {
         return description;
     }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setImdbIdentifier(String imdbIdentifier) {
+        this.imdbIdentifier = imdbIdentifier;
+    }
+
+    public void setFilmType(FilmType filmType) {
+        this.filmType = filmType;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public void setReleaseDate(LocalDate releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
 
 }
