@@ -1114,3 +1114,25 @@ CREATE TABLE FILM_GENRE(
          film_id INTEGER NOT NULL
          genre_id INTEGER NOT NULL
 ) [42001-200]
+2019-11-17 17:36:07 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE IF NOT EXISTS Film(\n[*]"" +
+                                imdb_identifier VARCHAR(20) PRIMARY KEY, 
+                                title VARCHAR(50) NOT NULL, 
+                                film_type INTEGER NOT NULL,
+                               release_date DATE NOT NULL,
+                               rating DOUBLE NOT NULL,
+                               description VARCHAR(1000) NOT NULL)"
+Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS Film(\n[*]"" +
+                                imdb_identifier VARCHAR(20) PRIMARY KEY, 
+                                title VARCHAR(50) NOT NULL, 
+                                film_type INTEGER NOT NULL,
+                               release_date DATE NOT NULL,
+                               rating DOUBLE NOT NULL,
+                               description VARCHAR(1000) NOT NULL)"; SQL statement:
+CREATE TABLE IF NOT EXISTS Film(\n" +
+                                imdb_identifier VARCHAR(20) PRIMARY KEY, 
+                                title VARCHAR(50) NOT NULL, 
+                                film_type INTEGER NOT NULL,
+                               release_date DATE NOT NULL,
+                               rating DOUBLE NOT NULL,
+                               description VARCHAR(1000) NOT NULL) [42000-200]

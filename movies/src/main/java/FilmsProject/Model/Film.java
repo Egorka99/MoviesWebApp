@@ -21,9 +21,6 @@ public class Film {
     @Enumerated(EnumType.ORDINAL)
     private FilmType filmType;
 
-    //TODO Убрать genre
-    @Column
-    private String genre;
 
     @Column(name = "release_date")
     private LocalDate releaseDate;
@@ -40,12 +37,11 @@ public class Film {
             inverseJoinColumns = {@JoinColumn(name = "genre_id")})
     private List<Genre> genres = new ArrayList<>();
 
-    public Film(String title, String imdbIdentifier, FilmType filmType, String genre, LocalDate releaseDate, double rating,
+    public Film(String title, String imdbIdentifier, FilmType filmType, LocalDate releaseDate, double rating,
                 String description) {
         this.title = title;
         this.imdbIdentifier = imdbIdentifier;
         this.filmType = filmType;
-        this.genre = genre;
         this.releaseDate = releaseDate;
         this.rating = rating;
         this.description = description;
@@ -70,9 +66,6 @@ public class Film {
         return filmType;
     }
 
-    public String getGenre() {
-        return genre;
-    }
 
     public LocalDate getReleaseDate() {
         return releaseDate;
@@ -96,10 +89,6 @@ public class Film {
 
     public void setFilmType(FilmType filmType) {
         this.filmType = filmType;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
     }
 
     public void setReleaseDate(LocalDate releaseDate) {

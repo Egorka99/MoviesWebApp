@@ -1,16 +1,11 @@
 package FilmsProject.RESTservice;
 
-import FilmsProject.DataLayer.jpa.UserAccessJPA;
-import FilmsProject.Interfaces.AdminService;
-import FilmsProject.Interfaces.FilmService;
-import FilmsProject.Interfaces.UserAccessService;
-import FilmsProject.Interfaces.UserService;
+import FilmsProject.DataLayer.jpa.TestAccessJPA;
 import FilmsProject.Model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.Response;
 import java.util.List;
 
 
@@ -37,7 +32,7 @@ public class MovieController {
 //     private Admin admin;
 
      @Autowired
-     UserAccessJPA userAccessJPA;
+     TestAccessJPA testAccessJPA;
 
 //     @GET
 //     @Path("/{id}")
@@ -118,25 +113,25 @@ public class MovieController {
     @GET
     @Path("/getUsers")
     public List<User> getUsers() {
-         return userAccessJPA.getAll();
+         return testAccessJPA.getAll();
     }
 
     @GET
     @Path("/getFilms")
     public List<Film> getFilms() {
-        return userAccessJPA.getAllFilms();
+        return testAccessJPA.getAllFilms();
     }
 
     @GET
     @Path("/getReviews")
     public List<Review> getReviews() {
-        return userAccessJPA.getAllReviews();
+        return testAccessJPA.getAllReviews();
     }
 
     @GET
     @Path("/getGenres")
     public List<Genre> getGenres() {
-        return userAccessJPA.getAllGenres();
+        return testAccessJPA.getAllGenres();
     }
 
 }

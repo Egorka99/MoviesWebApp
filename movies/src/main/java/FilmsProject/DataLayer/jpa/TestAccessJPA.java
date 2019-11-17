@@ -1,23 +1,19 @@
 package FilmsProject.DataLayer.jpa;
 
 import FilmsProject.Model.*;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 import java.time.LocalDate;
 import java.util.List;
 
 @Component
-public class UserAccessJPA {
+public class TestAccessJPA {
 
     private EntityManagerFactory factory = Persistence.createEntityManagerFactory("movies");
     private EntityManager manager = factory.createEntityManager();
 
-    public UserAccessJPA() {
+    public TestAccessJPA() {
     }
 
     public List<User> getAll()
@@ -35,7 +31,6 @@ public class UserAccessJPA {
         film.setRating(7.8);
         film.setDescription("bla bla");
         film.setFilmType(FilmType.FILM);
-        film.setGenre("Comedy");
         film.setTitle("The Best Film");
         film.setReleaseDate(LocalDate.now());
 

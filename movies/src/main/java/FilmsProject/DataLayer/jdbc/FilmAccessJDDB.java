@@ -77,7 +77,6 @@ public class FilmAccessJDDB implements FilmAccessService {
                     queryResult.getString("title"),
                     queryResult.getString("IMDBidentifier"),
                     FilmType.values()[queryResult.getInt("filmtype")],
-                    queryResult.getString("genre"),
                     queryResult.getDate("releasedate").toLocalDate(),
                     queryResult.getDouble("rating"),
                     queryResult.getString("description"));
