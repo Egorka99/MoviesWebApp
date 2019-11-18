@@ -18,6 +18,9 @@ public class Review {
     @Column(name="author_login")
     private String authorLogin;
 
+    @Column(name = "film_identifier")
+    private String filmIdentifier;
+
     @Column(name="review_text")
     private String reviewText;
 
@@ -53,6 +56,14 @@ public class Review {
 
     public double getRating() {
         return rating;
+    }
+
+    public String getFilmIdentifier() {
+        return filmIdentifier;
+    }
+
+    public void setFilmIdentifier(String filmIdentifier) {
+        this.filmIdentifier = filmIdentifier;
     }
 
     public void setReviewId(Long reviewId) {

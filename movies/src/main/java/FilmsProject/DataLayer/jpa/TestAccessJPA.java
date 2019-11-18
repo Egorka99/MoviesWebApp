@@ -10,10 +10,11 @@ import java.util.List;
 @Component
 public class TestAccessJPA {
 
-    private EntityManagerFactory factory = Persistence.createEntityManagerFactory("movies");
-    private EntityManager manager = factory.createEntityManager();
+    private EntityManager manager;
 
     public TestAccessJPA() {
+       EntityManagerFactory factory = Persistence.createEntityManagerFactory("movies");
+       manager = factory.createEntityManager();
     }
 
     public List<User> getAll()

@@ -3,34 +3,62 @@ package FilmsProject.DataLayer.jpa;
 import FilmsProject.Interfaces.FilmAccessService;
 import FilmsProject.Model.Film;
 import FilmsProject.Model.Review;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 import java.time.LocalDate;
 import java.util.List;
 
+//TODO Протестить данный класс
 public class FilmAccessJPA implements FilmAccessService{
+
+    private EntityManager manager;
+
+    @Autowired
+    ReviewRepository reviewRepository;
+
+
+    public FilmAccessJPA() {
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("movies");
+        manager = factory.createEntityManager();
+    }
 
     @Override
     public List<Film> getFilmsByField(String field, String value) {
-        return null;
+       return null;
     }
 
     @Override
     public List<Review> getFilmReviews(String filmIdentifier) {
-        return null;
+        TypedQuery<Review> q = manager.createQuery(
+                "Select c from Review c Where c.filmIdentifier = ?1", Review.class);
+        q.setParameter(1,filmIdentifier);
+        return  q.getResultList();
     }
 
     @Override
     public boolean addNewReview(String filmIdentifier, Review review) {
-        return false;
+        review.setFilmIdentifier(filmIdentifier);
+        manager.persist(review);
+        return reviewRepository.existsById(review.getReviewId());
     }
 
     @Override
     public boolean deleteReview(Long reviewId) {
-        return false;
+        reviewRepository.deleteById(reviewId);
+        return !reviewRepository.existsById(reviewId);
     }
 
     @Override
-    public boolean updateReview(Long reviewId, LocalDate date, String reviewText, double rating) {
-        return false;
+    public boolean updateReview(Long reviewId, LocalDate date, String reviewText, double rating) throws Exception {
+        Review review = reviewRepository.findById(reviewId).orElseThrow(() -> new Exception("Не удалось изменить отзыв"));
+        review.setCreateDate(date);
+        review.setReviewText(reviewText);
+        review.setRating(rating);
+        manager.persist(review);
+        return true;
     }
 }

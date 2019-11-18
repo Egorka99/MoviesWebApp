@@ -11,5 +11,5 @@ public interface FilmAccessService {
     List<Review> getFilmReviews(String filmIdentifier);
     boolean addNewReview(String filmIdentifier,Review review);
     boolean deleteReview(Long reviewId);
-    boolean updateReview(Long reviewId, LocalDate date, String reviewText, double rating);
+    boolean updateReview(Long reviewId, LocalDate date, String reviewText, double rating) throws Exception;
 }
