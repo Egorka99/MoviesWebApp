@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Component
-public class TestAccessJPA {
+public class TestAccessJPA{
 
     private EntityManager manager;
 

@@ -4,6 +4,7 @@ import FilmsProject.Interfaces.FilmAccessService;
 import FilmsProject.Model.Film;
 import FilmsProject.Model.Review;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,13 +14,13 @@ import java.time.LocalDate;
 import java.util.List;
 
 //TODO Протестить данный класс
-public class FilmAccessJPA implements FilmAccessService{
+@Component
+public class FilmAccessJPA implements FilmAccessService {
 
     private EntityManager manager;
 
     @Autowired
-    ReviewRepository reviewRepository;
-
+    private ReviewRepository reviewRepository;
 
     public FilmAccessJPA() {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("movies");
@@ -53,12 +54,12 @@ public class FilmAccessJPA implements FilmAccessService{
     }
 
     @Override
-    public boolean updateReview(Long reviewId, LocalDate date, String reviewText, double rating) throws Exception {
-        Review review = reviewRepository.findById(reviewId).orElseThrow(() -> new Exception("Не удалось изменить отзыв"));
-        review.setCreateDate(date);
-        review.setReviewText(reviewText);
-        review.setRating(rating);
-        manager.persist(review);
-        return true;
+    public boolean updateReview(Long reviewId, LocalDate date, String reviewText, double rating){
+            Review review = reviewRepository.findById(reviewId).orElse(new Review());
+            review.setCreateDate(date);
+            review.setReviewText(reviewText);
+            review.setRating(rating);
+            manager.persist(review);
+            return !(review.getReviewId() == null);
     }
 }
