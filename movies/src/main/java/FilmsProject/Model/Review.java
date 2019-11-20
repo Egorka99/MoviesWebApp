@@ -9,7 +9,7 @@ public class Review {
 
     @Id
     @Column(name = "review_id")
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long reviewId;
 
     @Column(name="create_date")
@@ -30,8 +30,7 @@ public class Review {
     public Review() {
     }
 
-    public Review(Long reviewId, LocalDate createDate, String authorLogin, String reviewText, double rating) {
-        this.reviewId = reviewId;
+    public Review(LocalDate createDate, String authorLogin, String reviewText, double rating) {
         this.createDate = createDate;
         this.authorLogin = authorLogin;
         this.reviewText = reviewText;
@@ -88,6 +87,6 @@ public class Review {
 
     @Override
     public String toString() {
-        return "Отзыв № "+getReviewId()+". Автор: "+getAuthorLogin()+". Дата создания: "+getCreateDate()+". Оценка: "+getRating()+"";
+        return "Отзыв № "+getReviewId()+" к фильму №"+ getFilmIdentifier()+". Автор: "+getAuthorLogin()+". Дата создания: "+getCreateDate()+". Оценка: "+getRating()+"";
     }
 }

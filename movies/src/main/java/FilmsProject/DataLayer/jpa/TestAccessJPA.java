@@ -28,20 +28,22 @@ public class TestAccessJPA{
     {
         Film film = new Film();
 
-        film.setImdbIdentifier("345");
+        film.setImdbIdentifier("346");
         film.setRating(7.8);
         film.setDescription("bla bla");
         film.setFilmType(FilmType.FILM);
         film.setTitle("The Best Film");
         film.setReleaseDate(LocalDate.now());
 
+        Review review = new Review(LocalDate.now(),"user123","bla",8.7);
+        review.setFilmIdentifier("345");
         Genre genre = new Genre();
         genre.setGenreName("Comedy");
         manager.getTransaction().begin();
-        System.err.println(genre.getGenreId());
-        System.err.println(genre.getGenreName());
+        manager.persist(review);
         manager.persist(genre);
         film.addGenre(genre);
+
         manager.persist(film);
         manager.getTransaction().commit();
         manager.close();

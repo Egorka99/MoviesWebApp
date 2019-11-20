@@ -21,7 +21,6 @@ public class Film {
     @Enumerated(EnumType.ORDINAL)
     private FilmType filmType;
 
-
     @Column(name = "release_date")
     private LocalDate releaseDate;
 

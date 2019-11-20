@@ -52,12 +52,11 @@ public class MovieController {
         return filmService.searchFilmsByProperty(property,value);
      }
 
-     //Test data: http://localhost:8081/webapp/movie/addReview?filmIdentifier=326&reviewText=GoodFilm&rating=8.6
+     //Test data: http://localhost:8081/webapp/movie/346/review?authorLogin=user123&reviewText=ss&rating=6.7
      @POST
      @Path("/{id}/review")
      public Response addReview(@PathParam("id") String id, @QueryParam("authorLogin") String authorLogin,
                                @QueryParam("reviewText") String reviewText, @QueryParam("rating") double rating) {
-
 
           if (userService.writeReview(authorLogin,id,reviewText,rating)) {
                return Response

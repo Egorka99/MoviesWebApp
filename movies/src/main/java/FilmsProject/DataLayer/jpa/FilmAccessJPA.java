@@ -43,7 +43,9 @@ public class FilmAccessJPA implements FilmAccessService {
     @Override
     public boolean addNewReview(String filmIdentifier, Review review) {
         review.setFilmIdentifier(filmIdentifier);
+        manager.getTransaction().begin();
         manager.persist(review);
+        manager.getTransaction().commit();
         return reviewRepository.existsById(review.getReviewId());
     }
 
