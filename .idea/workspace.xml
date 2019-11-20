@@ -11,9 +11,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="HTML File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -29,7 +29,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="ToolWindowDebug.ShowToolbar" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Optimization" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -37,15 +37,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\java\MoviesWebApp\movies\src\main\resources" />
-      <recent name="D:\java\MoviesWebApp\movies\db" />
-      <recent name="D:\java\MoviesWebApp\movies\src\main\java" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\java\MoviesWebApp\movies" />
       <recent name="D:\java\MoviesWebApp\movies\src\main\java" />
       <recent name="D:\java\MoviesWebApp\movies\src\main\Java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\java\MoviesWebApp\movies\src\main\resources" />
+      <recent name="D:\java\MoviesWebApp\movies\db" />
+      <recent name="D:\java\MoviesWebApp\movies\src\main\java" />
     </key>
   </component>
   <component name="RunDashboard">

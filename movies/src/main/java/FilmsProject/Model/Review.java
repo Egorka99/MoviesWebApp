@@ -4,50 +4,90 @@ package FilmsProject.Model;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
 public class Review {
 
+    @Id
+    @Column(name = "review_id")
+    @GeneratedValue
     private Long reviewId;
 
+    @Column(name="create_date")
     private LocalDate createDate;
 
-    //TODO ???
-    private User author;
+    @Column(name="author_login")
+    private String authorLogin;
 
+    @Column(name = "film_identifier")
+    private String filmIdentifier;
+
+    @Column(name="review_text")
     private String reviewText;
 
-    private double Rating;
+    @Column
+    private double rating;
 
-    public Review(Long reviewId, LocalDate createDate, User author, String reviewText, double rating) {
-        this.reviewId = reviewId;
-        this.createDate = createDate;
-        this.author = author;
-        this.reviewText = reviewText;
-        Rating = rating;
+    public Review() {
     }
 
+    public Review(Long reviewId, LocalDate createDate, String authorLogin, String reviewText, double rating) {
+        this.reviewId = reviewId;
+        this.createDate = createDate;
+        this.authorLogin = authorLogin;
+        this.reviewText = reviewText;
+        this.rating = rating;
+    }
 
     public LocalDate getCreateDate() {
         return createDate;
-    }
-
-    public User getAuthor() {
-        return author;
     }
 
     public String getReviewText() {
         return reviewText;
     }
 
-    public double getRating() {
-        return Rating;
+    public String getAuthorLogin() {
+        return authorLogin;
     }
 
     public Long getReviewId() {
         return reviewId;
     }
 
+    public double getRating() {
+        return rating;
+    }
+
+    public String getFilmIdentifier() {
+        return filmIdentifier;
+    }
+
+    public void setFilmIdentifier(String filmIdentifier) {
+        this.filmIdentifier = filmIdentifier;
+    }
+
+    public void setReviewId(Long reviewId) {
+        this.reviewId = reviewId;
+    }
+
+    public void setCreateDate(LocalDate createDate) {
+        this.createDate = createDate;
+    }
+
+    public void setAuthorLogin(String authorLogin) {
+        this.authorLogin = authorLogin;
+    }
+
+    public void setReviewText(String reviewText) {
+        this.reviewText = reviewText;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
     @Override
     public String toString() {
-        return "Отзыв № "+getReviewId()+". Автор: "+getAuthor().getName()+". Дата создания: "+getCreateDate()+". Оценка: "+getRating()+"";
+        return "Отзыв № "+getReviewId()+". Автор: "+getAuthorLogin()+". Дата создания: "+getCreateDate()+". Оценка: "+getRating()+"";
     }
 }
