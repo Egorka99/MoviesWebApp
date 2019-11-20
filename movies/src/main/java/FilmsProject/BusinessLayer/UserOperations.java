@@ -6,6 +6,7 @@ import FilmsProject.Interfaces.UserService;
 import FilmsProject.Model.Review;
 import FilmsProject.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -15,7 +16,9 @@ public class UserOperations implements UserService {
 
     @Autowired
     private UserAccessService userAccessService;
+    
     @Autowired
+    @Qualifier("filmAccessJPA")
     private FilmAccessService filmAccessService;
 
     @Override
