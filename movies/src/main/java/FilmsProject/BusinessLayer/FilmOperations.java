@@ -5,6 +5,7 @@ import FilmsProject.Interfaces.FilmService;
 import FilmsProject.Model.Film;
 import FilmsProject.Model.Review;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.List;
 public class FilmOperations implements FilmService {
 
     @Autowired
+    @Qualifier("filmAccessJPA")
     private FilmAccessService filmAccessService;
 
     //TODO сделать енамом
