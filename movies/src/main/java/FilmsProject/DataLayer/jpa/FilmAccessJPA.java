@@ -46,22 +46,37 @@ public class FilmAccessJPA implements FilmAccessService {
         manager.getTransaction().begin();
         manager.persist(review);
         manager.getTransaction().commit();
-        return reviewRepository.existsById(review.getReviewId());
+        return manager.find(Review.class,review.getReviewId()).getReviewId() != null;
     }
 
     @Override
     public boolean deleteReview(Long reviewId) {
-        reviewRepository.deleteById(reviewId);
-        return !reviewRepository.existsById(reviewId);
+        Review review = manager.find(Review.class, reviewId);
+
+        if (review.getReviewId() != null) {
+            manager.getTransaction().begin();
+            manager.remove(review);
+            manager.getTransaction().commit();
+            return true; 
+        }
+
+        return false;
     }
 
     @Override
     public boolean updateReview(Long reviewId, LocalDate date, String reviewText, double rating){
-            Review review = reviewRepository.findById(reviewId).orElse(new Review());
+        Review review = manager.find(Review.class, reviewId);
+
+        if (review.getReviewId() != null) {
+            manager.getTransaction().begin();
             review.setCreateDate(date);
             review.setReviewText(reviewText);
             review.setRating(rating);
-            manager.persist(review);
-            return !(review.getReviewId() == null);
+            manager.getTransaction().commit();
+            return true;
+        }
+
+        return false;
+
     }
 }

@@ -9,7 +9,7 @@ public class Review {
 
     @Id
     @Column(name = "review_id")
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long reviewId;
 
     @Column(name="create_date")
