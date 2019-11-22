@@ -46,11 +46,16 @@ public class MovieController {
      }
 
      @GET
-     @Path("/view")
-     public List<Film> searchFilm(@QueryParam("property") String property, @QueryParam("value") String value) {
-
+     @Path("/search")
+     public List<Film> searchFilm(@QueryParam("property") SearchProperty property, @QueryParam("value") String value) {
         return filmService.searchFilmsByProperty(property,value);
      }
+
+    @GET
+    @Path("/search/range")
+    public List<Film> searchFilm(@QueryParam("property") SearchInRangeProperty property, @QueryParam("from") String from, @QueryParam("to") String to) {
+        return filmService.searchFilmsInRange(property,from,to);
+    }
 
      //Test data: http://localhost:8081/webapp/movie/346/review?authorLogin=user123&reviewText=ss&rating=6.7
      @POST
