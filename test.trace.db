@@ -1767,3 +1767,19 @@ call next value for hibernate_sequence [90036-200]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-11-22 18:56:42 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE GENRE(
+GENRE_ID BIGINT PRIMARY KEY
+GENRE_NAME[*] VARCHAR(20)
+
+)"; ожидалось "HASH, AUTO_INCREMENT, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE GENRE(
+GENRE_ID BIGINT PRIMARY KEY
+GENRE_NAME[*] VARCHAR(20)
+
+)"; expected "HASH, AUTO_INCREMENT, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE GENRE(
+genre_id BIGINT PRIMARY KEY
+genre_name VARCHAR(20)
+
+) [42001-200]

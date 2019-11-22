@@ -18,8 +18,7 @@ import java.util.List;
 @Consumes("application/json")
 @Produces("application/json")
 @Component
-//TODO Ну тут переименовать надо и вообще подумать над разделением
-public class MovieController {
+public class RestController {
 
      @Autowired
      private FilmService filmService;
@@ -57,7 +56,6 @@ public class MovieController {
         return filmService.searchFilmsInRange(property,from,to);
     }
 
-     //Test data: http://localhost:8081/webapp/movie/346/review?authorLogin=user123&reviewText=ss&rating=6.7
      @POST
      @Path("/{id}/review")
      public Response addReview(@PathParam("id") String id, @QueryParam("authorLogin") String authorLogin,
@@ -78,13 +76,12 @@ public class MovieController {
 
      @POST
      @Path("/review")
-     public Response updateReview(@QueryParam("authorLogin") String authorLogin,
-                                  @QueryParam("filmIdentifier") String filmIdentifier,
-                                  @QueryParam("reviewId") Long currentReviewId,
-                                  @QueryParam("reviewText") String reviewText,
-                                  @QueryParam("rating") double rating)
+     public Response updateReview( @QueryParam("filmIdentifier") String filmIdentifier,
+                                   @QueryParam("reviewId") Long currentReviewId,
+                                   @QueryParam("reviewText") String reviewText,
+                                   @QueryParam("rating") double rating)
      {
-         if (userService.updateReview(authorLogin,filmIdentifier,currentReviewId,reviewText,rating)) {
+         if (userService.updateReview(filmIdentifier,currentReviewId,reviewText,rating)) {
              return Response
                      .status(Response.Status.OK)
                      .entity("Отзыв успешно изменен!")
@@ -114,31 +111,5 @@ public class MovieController {
                  .build();
      }
 
-//    @Autowired
-//    private TestAccessJPA testAccessJPA;
-//
-//    @GET
-//    @Path("/getUsers")
-//    public List<User> getUsers() {
-//         return testAccessJPA.getAll();
-//    }
-//
-//    @GET
-//    @Path("/getFilms")
-//    public List<Film> getFilms() {
-//        return testAccessJPA.getAllFilms();
-//    }
-//
-//    @GET
-//    @Path("/getReviews")
-//    public List<Review> getReviews() {
-//        return testAccessJPA.getAllReviews();
-//    }
-//
-//    @GET
-//    @Path("/getGenres")
-//    public List<Genre> getGenres() {
-//        return testAccessJPA.getAllGenres();
-//    }
 
 }

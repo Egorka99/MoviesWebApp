@@ -7,13 +7,11 @@ import java.util.List;
 @Entity
 public class Genre {
 
-    //TODO Long
-    //TODO Переделать id
     @Id
     @Column(name = "genre_id")
     @SequenceGenerator(name= "GENRE_SEQUENCE", sequenceName = "GENRE_SEQUENCE_ID", allocationSize = 1)
     @GeneratedValue(strategy=GenerationType.AUTO, generator="GENRE_SEQUENCE")
-    private int genreId;
+    private Long genreId;
 
     @Column(name="genre_name")
     private String genreName;
@@ -24,7 +22,7 @@ public class Genre {
     public Genre() {
     }
 
-    public int getGenreId() {
+    public Long getGenreId() {
         return genreId;
     }
 
