@@ -11,7 +11,7 @@ public interface FilmAccessService {
     List<Film> getFilmsByTitle(String title);
     List<Film> getFilmsByReleaseDate(LocalDate date);
     List<Film> getFilmsInRange(Double fromRating, Double toRating);
-    List<Film> getFilmsInRange(String fromYear, String toYear);
+    List<Film> getFilmsInRange(LocalDate fromYear, LocalDate toYear);
     List<Review> getFilmReviews(String filmIdentifier);
     boolean addNewReview(String filmIdentifier,Review review);
     boolean deleteReview(Long reviewId);
