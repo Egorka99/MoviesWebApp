@@ -28,7 +28,7 @@ public class TestAccessJPA{
     {
         Film film = new Film();
 
-        film.setImdbIdentifier("346");
+        film.setImdbIdentifier("348");
         film.setRating(7.8);
         film.setDescription("bla bla");
         film.setFilmType(FilmType.FILM);
@@ -36,7 +36,7 @@ public class TestAccessJPA{
         film.setReleaseDate(LocalDate.now());
 
         Review review = new Review(LocalDate.now(),"user123","bla",8.7);
-        review.setFilmIdentifier("345");
+        review.setFilmIdentifier("347");
         Genre genre = new Genre();
         genre.setGenreName("Comedy");
         manager.getTransaction().begin();

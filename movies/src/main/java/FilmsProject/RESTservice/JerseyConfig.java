@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class JerseyConfig extends ResourceConfig {
     public JerseyConfig() {
-        register(MovieController.class);
+        register(RestController.class);
     }
 }

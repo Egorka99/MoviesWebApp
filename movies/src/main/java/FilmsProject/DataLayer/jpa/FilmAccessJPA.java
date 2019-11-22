@@ -13,7 +13,6 @@ import javax.persistence.TypedQuery;
 import java.time.LocalDate;
 import java.util.List;
 
-//TODO Протестить данный класс
 @Component
 public class FilmAccessJPA implements FilmAccessService {
 
