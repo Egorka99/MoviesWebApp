@@ -38,7 +38,7 @@ public class UserOperations implements UserService {
     @Override
     public boolean writeReview(String authorLogin, String filmIdentifier, String reviewText, double rating) {
         LocalDate reviewDate = LocalDate.now();
-        Review review = new Review(null,reviewDate,authorLogin,reviewText,rating);
+        Review review = new Review(reviewDate,authorLogin,reviewText,rating);
         return filmAccessService.addNewReview(filmIdentifier,review);
     }
 

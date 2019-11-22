@@ -8,9 +8,10 @@ import java.util.List;
 public class Genre {
 
     //TODO Long
+    //TODO Переделать id
     @Id
     @Column(name = "genre_id")
-    @SequenceGenerator(name= "GENRE_SEQUENCE", sequenceName = "GENRE_SEQUENCE_ID", initialValue=1, allocationSize = 1)
+    @SequenceGenerator(name= "GENRE_SEQUENCE", sequenceName = "GENRE_SEQUENCE_ID", allocationSize = 1)
     @GeneratedValue(strategy=GenerationType.AUTO, generator="GENRE_SEQUENCE")
     private int genreId;
 

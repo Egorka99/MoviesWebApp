@@ -28,8 +28,34 @@ public class FilmAccessJPA implements FilmAccessService {
     }
 
     @Override
-    public List<Film> getFilmsByField(String field, String value) {
-       return null;
+    public Film getFilmByIdentifier(String identifier) {
+       return manager.find(Film.class, identifier);
+    }
+
+    @Override
+    public List<Film> getFilmsByTitle(String title) {
+        TypedQuery<Film> q = manager.createQuery(
+                "Select c from Film c Where c.title = ?1", Film.class);
+        q.setParameter(1,title);
+        return  q.getResultList();
+    }
+
+    @Override
+    public List<Film> getFilmsByReleaseDate(LocalDate date) {
+        TypedQuery<Film> q = manager.createQuery(
+                "Select c from Film c Where c.releaseDate = ?1", Film.class);
+        q.setParameter(1,date);
+        return  q.getResultList();
+    }
+ 
+    @Override
+    public List<Film> getFilmsInRange(Double fromRating, Double toRating) {
+        return null;
+    }
+
+    @Override
+    public List<Film> getFilmsInRange(String fromYear, String toYear) {
+        return null;
     }
 
     @Override
@@ -43,23 +69,40 @@ public class FilmAccessJPA implements FilmAccessService {
     @Override
     public boolean addNewReview(String filmIdentifier, Review review) {
         review.setFilmIdentifier(filmIdentifier);
+        manager.getTransaction().begin();
         manager.persist(review);
-        return reviewRepository.existsById(review.getReviewId());
+        manager.getTransaction().commit();
+        return manager.find(Review.class,review.getReviewId()).getReviewId() != null;
     }
 
     @Override
     public boolean deleteReview(Long reviewId) {
-        reviewRepository.deleteById(reviewId);
-        return !reviewRepository.existsById(reviewId);
+        Review review = manager.find(Review.class, reviewId);
+
+        if (review.getReviewId() != null) {
+            manager.getTransaction().begin();
+            manager.remove(review);
+            manager.getTransaction().commit();
+            return true;
+        }
+
+        return false;
     }
 
     @Override
     public boolean updateReview(Long reviewId, LocalDate date, String reviewText, double rating){
-            Review review = reviewRepository.findById(reviewId).orElse(new Review());
+        Review review = manager.find(Review.class, reviewId);
+
+        if (review.getReviewId() != null) {
+            manager.getTransaction().begin();
             review.setCreateDate(date);
             review.setReviewText(reviewText);
             review.setRating(rating);
-            manager.persist(review);
-            return !(review.getReviewId() == null);
+            manager.getTransaction().commit();
+            return true;
+        }
+
+        return false;
+
     }
 }

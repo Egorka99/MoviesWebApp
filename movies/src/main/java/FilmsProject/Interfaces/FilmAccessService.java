@@ -7,7 +7,11 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface FilmAccessService {
-    List<Film> getFilmsByField(String field, String value);
+    Film getFilmByIdentifier(String identifier);
+    List<Film> getFilmsByTitle(String title);
+    List<Film> getFilmsByReleaseDate(LocalDate date);
+    List<Film> getFilmsInRange(Double fromRating, Double toRating);
+    List<Film> getFilmsInRange(String fromYear, String toYear);
     List<Review> getFilmReviews(String filmIdentifier);
     boolean addNewReview(String filmIdentifier,Review review);
     boolean deleteReview(Long reviewId);
