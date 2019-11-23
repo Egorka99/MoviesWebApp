@@ -49,7 +49,7 @@ public class FilmAccessJPA implements FilmAccessService {
  
     @Override
     public List<Film> getFilmsInRange(Double fromRating, Double toRating) {
-        TypedQuery<Film> typedQuery = manager.createQuery("Select m from Movie m WHERE m.rating BETWEEN ?1 AND ?2",Film.class);
+        TypedQuery<Film> typedQuery = manager.createQuery("Select m from Film m WHERE m.rating BETWEEN ?1 AND ?2",Film.class);
         typedQuery.setParameter(1,fromRating);
         typedQuery.setParameter(2,toRating);
         return  typedQuery.getResultList();
@@ -57,7 +57,7 @@ public class FilmAccessJPA implements FilmAccessService {
 
     @Override
     public List<Film> getFilmsInRange(LocalDate fromYear, LocalDate toYear) {
-        TypedQuery<Film> typedQuery = manager.createQuery("Select m from Movie m WHERE m.releaseDate BETWEEN ?1 AND ?2",Film.class);
+        TypedQuery<Film> typedQuery = manager.createQuery("Select m from Film m WHERE m.releaseDate BETWEEN ?1 AND ?2",Film.class);
         typedQuery.setParameter(1,fromYear);
         typedQuery.setParameter(2,toYear);
         return  typedQuery.getResultList();
