@@ -46,9 +46,9 @@ public class FilmOperations implements FilmService {
                 filmAccessService.getFilmsInRange(Double.parseDouble(from), Double.parseDouble(to));
             case BY_YEAR:
                 LocalDate dateFrom = LocalDate.of(Integer.parseInt(from),1,1);
-                LocalDate dateTo = LocalDate.of(Integer.parseInt(from),12,31);
-                filmAccessService.getFilmsInRange(dateFrom,dateTo);
-        }
+                LocalDate dateTo = LocalDate.of(Integer.parseInt(to),12,31);
+                foundFilms.addAll(filmAccessService.getFilmsInRange(dateFrom,dateTo));
+        } 
         return foundFilms;
     }
 
