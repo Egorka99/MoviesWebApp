@@ -29,7 +29,7 @@ public class RestController {
      @Autowired
      private Admin admin;
 
-     @GET 
+     @GET
      @Path("/{id}")
      public Object[] getById(@PathParam("id") String id) {
         return filmService.getFilmDetails(id);
@@ -53,6 +53,7 @@ public class RestController {
          return filmService.searchAllGenres();
     }
 
+    // Test request: http://localhost:8081/webapp/movie/46483/review?authorLogin=user123&reviewText=Legend!&rating=9.1
      @POST
      @Path("/{id}/review")
      public Response addReview(@PathParam("id") String id, @QueryParam("authorLogin") String authorLogin,
@@ -66,11 +67,13 @@ public class RestController {
           }
 
           return Response
-                  .status(Response.Status.INTERNAL_SERVER_ERROR)
+                  .status(Response.Status.INTERNAL_SERVER_ERROR) 
                   .entity("Не удалось добавить отзыв")
                   .build();
      }
 
+
+     //Test request: http://localhost:8081/webapp/movie/review?filmIdentifier=326&reviewId=418&reviewText=update&rating=8.4
      @POST
      @Path("/review")
      public Response updateReview( @QueryParam("filmIdentifier") String filmIdentifier,
@@ -92,6 +95,7 @@ public class RestController {
 
      }
 
+    // Test request: http://localhost:8081/webapp/movie/review/450
      @DELETE
      @Path("/review/{id}")
      public Response deleteReview(@PathParam("id") Long reviewId) {
