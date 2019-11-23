@@ -2,6 +2,7 @@ package FilmsProject.DataLayer.jpa;
 
 import FilmsProject.Interfaces.FilmAccessService;
 import FilmsProject.Model.Film;
+import FilmsProject.Model.Genre;
 import FilmsProject.Model.Review;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -61,6 +62,13 @@ public class FilmAccessJPA implements FilmAccessService {
         typedQuery.setParameter(1,fromYear);
         typedQuery.setParameter(2,toYear);
         return  typedQuery.getResultList();
+    }
+
+    @Override
+    public List<Genre> getAllGenres() {
+        TypedQuery<Genre> q = manager.createQuery(
+                "Select g from Genre g", Genre.class);
+        return  q.getResultList();
     }
 
     @Override

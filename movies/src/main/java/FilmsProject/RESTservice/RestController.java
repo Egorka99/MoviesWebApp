@@ -1,10 +1,7 @@
 package FilmsProject.RESTservice;
 
-import FilmsProject.DataLayer.jpa.FilmAccessJPA;
-import FilmsProject.DataLayer.jpa.TestAccessJPA;
 import FilmsProject.Interfaces.AdminService;
 import FilmsProject.Interfaces.FilmService;
-import FilmsProject.Interfaces.UserAccessService;
 import FilmsProject.Interfaces.UserService;
 import FilmsProject.Model.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,16 +24,10 @@ public class RestController {
      private UserService userService;
 
      @Autowired
-     private UserAccessService userAccessService;
-
-     @Autowired
      private AdminService adminService;
 
      @Autowired
      private Admin admin;
-
-     @Autowired
-     private FilmAccessJPA filmAccessJPA;
 
      @GET
      @Path("/{id}")
@@ -56,6 +47,13 @@ public class RestController {
         return filmService.searchFilmsInRange(property,from,to);
     }
 
+    @GET
+    @Path("/genre")
+    public List<Genre> getGenres() {
+         return filmService.searchAllGenres();
+    }
+
+    // Test request: http://localhost:8081/webapp/movie/46483/review?authorLogin=user123&reviewText=Legend!&rating=9.1
      @POST
      @Path("/{id}/review")
      public Response addReview(@PathParam("id") String id, @QueryParam("authorLogin") String authorLogin,
@@ -69,11 +67,13 @@ public class RestController {
           }
 
           return Response
-                  .status(Response.Status.INTERNAL_SERVER_ERROR)
+                  .status(Response.Status.INTERNAL_SERVER_ERROR) 
                   .entity("Не удалось добавить отзыв")
                   .build();
      }
 
+
+     //Test request: http://localhost:8081/webapp/movie/review?filmIdentifier=326&reviewId=418&reviewText=update&rating=8.4
      @POST
      @Path("/review")
      public Response updateReview( @QueryParam("filmIdentifier") String filmIdentifier,
@@ -95,6 +95,7 @@ public class RestController {
 
      }
 
+    // Test request: http://localhost:8081/webapp/movie/review/450
      @DELETE
      @Path("/review/{id}")
      public Response deleteReview(@PathParam("id") Long reviewId) {
