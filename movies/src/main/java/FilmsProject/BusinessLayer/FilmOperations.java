@@ -43,12 +43,14 @@ public class FilmOperations implements FilmService {
         List<Film> foundFilms = new ArrayList<>();
         switch(property) {
             case BY_RATING:
-                filmAccessService.getFilmsInRange(Double.parseDouble(from), Double.parseDouble(to));
+                foundFilms.addAll(filmAccessService.getFilmsInRange(Double.parseDouble(from), Double.parseDouble(to)));
+                break;
             case BY_YEAR:
                 LocalDate dateFrom = LocalDate.of(Integer.parseInt(from),1,1);
                 LocalDate dateTo = LocalDate.of(Integer.parseInt(to),12,31);
                 foundFilms.addAll(filmAccessService.getFilmsInRange(dateFrom,dateTo));
-        } 
+                break;
+        }
         return foundFilms;
     }
 
