@@ -27,16 +27,10 @@ public class RestController {
      private UserService userService;
 
      @Autowired
-     private UserAccessService userAccessService;
-
-     @Autowired
      private AdminService adminService;
 
      @Autowired
      private Admin admin;
-
-     @Autowired
-     private FilmAccessJPA filmAccessJPA;
 
      @GET
      @Path("/{id}")
@@ -54,6 +48,12 @@ public class RestController {
     @Path("/search/range")
     public List<Film> searchFilm(@QueryParam("property") SearchInRangeProperty property, @QueryParam("from") String from, @QueryParam("to") String to) {
         return filmService.searchFilmsInRange(property,from,to);
+    }
+
+    @GET
+    @Path("/genre")
+    public List<Genre> getGenres() {
+         return filmService.searchAllGenres();
     }
 
      @POST

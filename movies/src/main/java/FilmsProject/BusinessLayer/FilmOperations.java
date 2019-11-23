@@ -2,10 +2,7 @@ package FilmsProject.BusinessLayer;
 
 import FilmsProject.Interfaces.FilmAccessService;
 import FilmsProject.Interfaces.FilmService;
-import FilmsProject.Model.Film;
-import FilmsProject.Model.Review;
-import FilmsProject.Model.SearchInRangeProperty;
-import FilmsProject.Model.SearchProperty;
+import FilmsProject.Model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -52,6 +49,11 @@ public class FilmOperations implements FilmService {
                 break;
         }
         return foundFilms;
+    }
+
+    @Override
+    public List<Genre> searchAllGenres() {
+        return filmAccessService.getAllGenres();
     }
 
     @Override
