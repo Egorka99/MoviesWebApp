@@ -29,7 +29,7 @@ public class RestController {
      @Autowired
      private Admin admin;
 
-     @GET
+     @GET 
      @Path("/{id}")
      public Object[] getById(@PathParam("id") String id) {
         return filmService.getFilmDetails(id);
