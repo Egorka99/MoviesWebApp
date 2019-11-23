@@ -1,10 +1,7 @@
 package FilmsProject.RESTservice;
 
-import FilmsProject.DataLayer.jpa.FilmAccessJPA;
-import FilmsProject.DataLayer.jpa.TestAccessJPA;
 import FilmsProject.Interfaces.AdminService;
 import FilmsProject.Interfaces.FilmService;
-import FilmsProject.Interfaces.UserAccessService;
 import FilmsProject.Interfaces.UserService;
 import FilmsProject.Model.*;
 import org.springframework.beans.factory.annotation.Autowired;
