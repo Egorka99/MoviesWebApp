@@ -1,7 +1,7 @@
-package FilmsProject.DataLayer.jdbc;
+package filmsproject.datalayer.jdbc;
 
-import FilmsProject.Interfaces.UserAccessService;
-import FilmsProject.Model.User;
+import filmsproject.interfaces.UserAccessService;
+import filmsproject.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

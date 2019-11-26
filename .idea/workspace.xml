@@ -78,7 +78,7 @@
       <module name="movies" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="FilmsProject.RESTservice.*" />
+          <option name="PATTERN" value="filmsproject.restservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,11 +87,11 @@
       </method>
     </configuration>
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FilmsProject.RESTservice.Application" />
+      <option name="MAIN_CLASS_NAME" value="filmsproject.restservice.Application" />
       <module name="movies" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="FilmsProject.RESTservice.*" />
+          <option name="PATTERN" value="filmsproject.restservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -104,7 +104,7 @@
       <module name="movies" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="FilmsProject.View.*" />
+          <option name="PATTERN" value="filmsproject.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -117,7 +117,7 @@
       <module name="movies" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="FilmsProject.Model.*" />
+          <option name="PATTERN" value="filmsproject.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

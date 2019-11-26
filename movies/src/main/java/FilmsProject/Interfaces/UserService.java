@@ -1,6 +1,6 @@
-package FilmsProject.Interfaces;
+package filmsproject.interfaces;
 
-import FilmsProject.Model.User;
+import filmsproject.model.User;
 
 public interface UserService {
     User signIn(String login, String password);

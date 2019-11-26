@@ -1,6 +1,6 @@
-package FilmsProject.View;
+package filmsproject.view;
 
-import FilmsProject.Model.Film;
+import filmsproject.model.Film;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

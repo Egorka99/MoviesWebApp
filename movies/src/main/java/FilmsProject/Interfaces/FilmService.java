@@ -1,6 +1,6 @@
-package FilmsProject.Interfaces;
+package filmsproject.interfaces;
 
-import FilmsProject.Model.*;
+import filmsproject.model.*;
 
 import java.util.List;
 

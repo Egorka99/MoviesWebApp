@@ -1,4 +1,4 @@
-package FilmsProject.RESTservice;
+package filmsproject.restservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

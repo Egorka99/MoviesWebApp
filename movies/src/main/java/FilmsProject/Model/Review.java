@@ -1,4 +1,4 @@
-package FilmsProject.Model;
+package filmsproject.model;
 
 
 import javax.persistence.*;

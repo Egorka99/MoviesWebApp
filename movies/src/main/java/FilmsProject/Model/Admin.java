@@ -1,8 +1,6 @@
-package FilmsProject.Model;
+package filmsproject.model;
 
 import org.springframework.stereotype.Component;
-
-import javax.persistence.Column;
 
 @Component
 public class Admin  {
