@@ -1,6 +1,4 @@
-package FilmsProject.Model;
-
-import org.springframework.stereotype.Component;
+package filmsproject.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;

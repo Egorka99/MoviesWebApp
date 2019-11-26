@@ -1,8 +1,8 @@
-package FilmsProject.BusinessLayer;
+package filmsproject.businesslayer;
 
-import FilmsProject.Interfaces.FilmAccessService;
-import FilmsProject.Interfaces.FilmService;
-import FilmsProject.Model.*;
+import filmsproject.interfaces.FilmAccessService;
+import filmsproject.interfaces.FilmService;
+import filmsproject.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

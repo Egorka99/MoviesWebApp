@@ -1,9 +1,9 @@
-package FilmsProject.DataLayer.jpa;
+package filmsproject.datalayer.jpa;
 
-import FilmsProject.Interfaces.FilmAccessService;
-import FilmsProject.Model.Film;
-import FilmsProject.Model.Genre;
-import FilmsProject.Model.Review;
+import filmsproject.interfaces.FilmAccessService;
+import filmsproject.model.Film;
+import filmsproject.model.Genre;
+import filmsproject.model.Review;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

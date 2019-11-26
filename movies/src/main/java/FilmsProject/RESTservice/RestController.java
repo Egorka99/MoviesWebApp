@@ -1,9 +1,9 @@
-package FilmsProject.RESTservice;
+package filmsproject.restservice;
 
-import FilmsProject.Interfaces.AdminService;
-import FilmsProject.Interfaces.FilmService;
-import FilmsProject.Interfaces.UserService;
-import FilmsProject.Model.*;
+import filmsproject.interfaces.AdminService;
+import filmsproject.interfaces.FilmService;
+import filmsproject.interfaces.UserService;
+import filmsproject.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

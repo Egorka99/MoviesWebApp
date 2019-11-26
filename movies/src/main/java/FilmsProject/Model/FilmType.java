@@ -1,4 +1,4 @@
-package FilmsProject.Model;
+package filmsproject.model;
 
 public enum FilmType {
     FILM,SERIES,CARTOON

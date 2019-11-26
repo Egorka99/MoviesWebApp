@@ -1,6 +1,6 @@
-package FilmsProject.DataLayer.jpa;
+package filmsproject.datalayer.jpa;
 
-import FilmsProject.Model.Review;
+import filmsproject.model.Review;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 

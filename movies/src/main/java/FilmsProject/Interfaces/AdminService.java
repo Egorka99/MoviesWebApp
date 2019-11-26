@@ -1,6 +1,6 @@
-package FilmsProject.Interfaces;
+package filmsproject.interfaces;
 
-import FilmsProject.Model.Admin;
+import filmsproject.model.Admin;
 
 public interface AdminService {
     boolean updateReview(Admin editor,Long reviewId, String reviewText, double rating);

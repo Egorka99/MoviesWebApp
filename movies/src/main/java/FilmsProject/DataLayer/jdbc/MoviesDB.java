@@ -1,4 +1,4 @@
-package FilmsProject.DataLayer.jdbc;
+package filmsproject.datalayer.jdbc;
 
 import org.springframework.stereotype.Component;
 

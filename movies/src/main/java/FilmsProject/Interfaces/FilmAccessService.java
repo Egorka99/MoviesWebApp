@@ -1,8 +1,8 @@
-package FilmsProject.Interfaces;
+package filmsproject.interfaces;
 
-import FilmsProject.Model.Film;
-import FilmsProject.Model.Genre;
-import FilmsProject.Model.Review;
+import filmsproject.model.Film;
+import filmsproject.model.Genre;
+import filmsproject.model.Review;
 
 import java.time.LocalDate;
 import java.util.List;
